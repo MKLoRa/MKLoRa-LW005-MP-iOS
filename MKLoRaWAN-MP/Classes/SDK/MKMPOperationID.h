@@ -40,6 +40,13 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskReadReportIntervalOfElectricityOperation,     //读取电量上报间隔
     mk_mp_taskReadEnergyIntervalParamsOperation,            //读取电能存储与上报间隔
     mk_mp_taskReadPowerChangeValueOperation,                //读取功率变化存储阈值
+    mk_mp_taskReadSpecificationsOfDeviceOperation,          //读取设备规格
+    mk_mp_taskReadOverVoltageProtectionOperation,           //读取过压保护信息
+    mk_mp_taskReadSagVoltageProtectionOperation,            //读取欠压保护信息
+    mk_mp_taskReadOverCurrentProtectionOperation,           //读取过流保护信息
+    mk_mp_taskReadOverLoadProtectionOperation,              //读取过载保护信息
+    mk_mp_taskReadLoadStatusNotificationsOperation,         //读取负载通知开关
+    mk_mp_taskReadLoadStatusThresholdOperation,             //读取P0状态
     
 #pragma mark - 设备控制参数读取
     mk_mp_taskReadSwitchStatusOperation,            //读取设备开关状态
@@ -76,6 +83,12 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskConfigReportIntervalOfElectricityOperation,       //配置电量上报间隔
     mk_mp_taskConfigEnergyIntervalParamsOperation,              //配置电能存储与上报间隔
     mk_mp_taskConfigPowerChangeValueOperation,                  //配置功率变化存储阈值
+    mk_mp_taskConfigOverVoltageOperation,                       //配置过压保护信息
+    mk_mp_taskConfigSagVoltageOperation,                        //配置欠压保护信息
+    mk_mp_taskConfigOverCurrentOperation,                       //配置过流保护信息
+    mk_mp_taskConfigOverLoadOperation,                          //配置过载保护信息
+    mk_mp_taskConfigLoadStatusNotificationsOperation,           //配置负载通知开关
+    mk_mp_taskConfigLoadStatusThresholdOperation,               //配置P0
         
 #pragma mark - 设备控制参数配置
     mk_mp_taskConfigSwitchStatusOperation,              //配置设备开关状态

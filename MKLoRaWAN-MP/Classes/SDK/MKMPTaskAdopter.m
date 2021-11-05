@@ -235,6 +235,71 @@
             @"value":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
         };
         operationID = mk_mp_taskReadPowerChangeValueOperation;
+    }else if ([cmd isEqualToString:@"46"]) {
+        //读取设备规格
+        resultDic = @{
+            @"specification":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_mp_taskReadSpecificationsOfDeviceOperation;
+    }else if ([cmd isEqualToString:@"47"]) {
+        //读取过压保护信息
+        BOOL isOn = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        NSString *overThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(2, 4)];
+        NSString *timeThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2)];
+        resultDic = @{
+            @"isOn":@(isOn),
+            @"overThreshold":overThreshold,
+            @"timeThreshold":timeThreshold,
+        };
+        operationID = mk_mp_taskReadOverVoltageProtectionOperation;
+    }else if ([cmd isEqualToString:@"48"]) {
+        //读取欠压保护信息
+        BOOL isOn = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        NSString *overThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(2, 2)];
+        NSString *timeThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(4, 2)];
+        resultDic = @{
+            @"isOn":@(isOn),
+            @"overThreshold":overThreshold,
+            @"timeThreshold":timeThreshold,
+        };
+        operationID = mk_mp_taskReadSagVoltageProtectionOperation;
+    }else if ([cmd isEqualToString:@"49"]) {
+        //读取过流保护信息
+        BOOL isOn = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        NSString *overThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(2, 2)];
+        NSString *timeThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(4, 2)];
+        resultDic = @{
+            @"isOn":@(isOn),
+            @"overThreshold":overThreshold,
+            @"timeThreshold":timeThreshold,
+        };
+        operationID = mk_mp_taskReadOverCurrentProtectionOperation;
+    }else if ([cmd isEqualToString:@"4a"]) {
+        //读取过载保护信息
+        BOOL isOn = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        NSString *overThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(2, 4)];
+        NSString *timeThreshold = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 2)];
+        resultDic = @{
+            @"isOn":@(isOn),
+            @"overThreshold":overThreshold,
+            @"timeThreshold":timeThreshold,
+        };
+        operationID = mk_mp_taskReadOverLoadProtectionOperation;
+    }else if ([cmd isEqualToString:@"4b"]) {
+        //读取负载通知开关
+        BOOL loadStart = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        BOOL loadStop = ([[content substringWithRange:NSMakeRange(2, 2)] isEqualToString:@"01"]);
+        resultDic = @{
+            @"loadStart":@(loadStart),
+            @"loadStop":@(loadStop),
+        };
+        operationID = mk_mp_taskReadLoadStatusNotificationsOperation;
+    }else if ([cmd isEqualToString:@"4c"]) {
+        //读取P0
+        resultDic = @{
+            @"value":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_mp_taskReadLoadStatusThresholdOperation;
     }else if ([cmd isEqualToString:@"61"]) {
         //读取开关状态
         BOOL isOn = ([content isEqualToString:@"01"]);
@@ -362,6 +427,24 @@
     }else if ([cmd isEqualToString:@"45"]) {
         //配置功率变化存储阈值
         operationID = mk_mp_taskConfigPowerChangeValueOperation;
+    }else if ([cmd isEqualToString:@"47"]) {
+        //配置过压保护信息
+        operationID = mk_mp_taskConfigOverVoltageOperation;
+    }else if ([cmd isEqualToString:@"48"]) {
+        //配置欠压保护信息
+        operationID = mk_mp_taskConfigSagVoltageOperation;
+    }else if ([cmd isEqualToString:@"49"]) {
+        //配置过流保护信息
+        operationID = mk_mp_taskConfigOverCurrentOperation;
+    }else if ([cmd isEqualToString:@"4a"]) {
+        //配置过载保护信息
+        operationID = mk_mp_taskConfigOverLoadOperation;
+    }else if ([cmd isEqualToString:@"4b"]) {
+        //配置负载通知开关
+        operationID = mk_mp_taskConfigLoadStatusNotificationsOperation;
+    }else if ([cmd isEqualToString:@"4c"]) {
+        //配置P0
+        operationID = mk_mp_taskConfigLoadStatusThresholdOperation;
     }else if ([cmd isEqualToString:@"61"]) {
         //配置开关状态
         operationID = mk_mp_taskConfigSwitchStatusOperation;

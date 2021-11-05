@@ -87,7 +87,7 @@
 
 - (BOOL)configSwitchStatus {
     __block BOOL success = NO;
-    [MKMPInterface configSwitchStatus:self.isOn sucBlock:^{
+    [MKMPInterface mp_configSwitchStatus:self.isOn sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
@@ -184,7 +184,7 @@
 
 - (dispatch_queue_t)readQueue {
     if (!_readQueue) {
-        _readQueue = dispatch_queue_create("LoRaAppSettingQueue", DISPATCH_QUEUE_SERIAL);
+        _readQueue = dispatch_queue_create("OverProtectionQueue", DISPATCH_QUEUE_SERIAL);
     }
     return _readQueue;
 }

@@ -201,15 +201,89 @@ NS_ASSUME_NONNULL_BEGIN
                          sucBlock:(void (^)(void))sucBlock
                       failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Configure device overvoltage protection information.
+/// @param isOn Open function
+/// @param productModel Specification and model of the equipment
+/// @param overThreshold Overvoltage protection value, Europe and France: 231~264V, U.K: 231~264V, America: 121~138V.
+/// @param timeThreshold 1s~30s
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configOverVoltage:(BOOL)isOn
+                productModel:(mk_mp_productModel)productModel
+               overThreshold:(NSInteger)overThreshold
+               timeThreshold:(NSInteger)timeThreshold
+                    sucBlock:(void (^)(void))sucBlock
+                 failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure device sagvoltage protection information.
+/// @param isOn Open function
+/// @param productModel Specification and model of the equipment
+/// @param overThreshold Sagvoltage protection value, Europe and France: 196~229V, U.K: 196~229V, America: 102~119V.
+/// @param timeThreshold 1s~30s
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configSagVoltage:(BOOL)isOn
+               productModel:(mk_mp_productModel)productModel
+              overThreshold:(NSInteger)overThreshold
+              timeThreshold:(NSInteger)timeThreshold
+                   sucBlock:(void (^)(void))sucBlock
+                failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure device overcurrent protection information.
+/// @param isOn Open function
+/// @param productModel Specification and model of the equipment
+/// @param overThreshold Overcurrent protection value, Europe and France: 1~192(0.1A), U.K: 1~156(0.1A), America: 1~180(0.1A).
+/// @param timeThreshold 1s~30s
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configOverCurrent:(BOOL)isOn
+                productModel:(mk_mp_productModel)productModel
+               overThreshold:(NSInteger)overThreshold
+               timeThreshold:(NSInteger)timeThreshold
+                    sucBlock:(void (^)(void))sucBlock
+                 failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure device overload protection information.
+/// @param isOn Open function
+/// @param productModel Specification and model of the equipment
+/// @param overThreshold Overload protection value, Europe and France: 10~4416W, U.K: 10~3558W, America: 10~2216W.
+/// @param timeThreshold 1s~30s
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configOverLoad:(BOOL)isOn
+             productModel:(mk_mp_productModel)productModel
+            overThreshold:(NSInteger)overThreshold
+            timeThreshold:(NSInteger)timeThreshold
+                 sucBlock:(void (^)(void))sucBlock
+              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the notification status when the device load status changes.
+/// @param startIsOn Load Start Notification Is On.
+/// @param stopIsOn Load Stop Notification Is On.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configLoadStatusNotifications:(BOOL)startIsOn
+                                stopIsOn:(BOOL)stopIsOn
+                                sucBlock:(void (^)(void))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the negative number P0 of the socket when the socket is not included in the load.
+/// @param threshold 1~10(0.1W)
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configLoadStatusThreshold:(NSInteger)threshold
+                            sucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
+
 #pragma mark **************************************** Device Control ************************************************
 
 /// Configure the switch status of device.
 /// @param isOn isOn
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
-+ (void)configSwitchStatus:(BOOL)isOn
-                  sucBlock:(void (^)(void))sucBlock
-               failedBlock:(void (^)(NSError *error))failedBlock;
++ (void)mp_configSwitchStatus:(BOOL)isOn
+                     sucBlock:(void (^)(void))sucBlock
+                  failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Restart the device.
 /// @param sucBlock Success callback

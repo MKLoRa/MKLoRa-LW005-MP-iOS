@@ -50,6 +50,12 @@ typedef NS_ENUM(NSInteger, mk_mp_repoweredDefaultMode) {
     mk_mp_repoweredDefaultMode_revertToLastMode,    //Revert To Last Mode
 };
 
+typedef NS_ENUM(NSInteger, mk_mp_productModel) {
+    mk_mp_productModel_FE,                        //Europe and France
+    mk_mp_productModel_America,                  //America
+    mk_mp_productModel_UK,                      //UK
+};
+
 #pragma mark ****************************************Delegate************************************************
 
 @protocol mk_mp_centralManagerScanDelegate <NSObject>

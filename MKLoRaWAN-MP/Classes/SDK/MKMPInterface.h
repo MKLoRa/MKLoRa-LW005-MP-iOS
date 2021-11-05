@@ -239,16 +239,113 @@ NS_ASSUME_NONNULL_BEGIN
                                            failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Read the energy storage and reporting interval.
+/*
+ @{
+     @"saveInterval":@"60",
+     @"repoertInterval":@"60",
+ };
+ */
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
 + (void)mp_readEnergyIntervalParamsWithSucBlock:(void (^)(id returnData))sucBlock
                                     failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// When the percentage change in power exceeds power change value, device will immediately store the energy data.
+/*
+ @{
+ @"value":@"10"
+ }
+ */
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
 + (void)mp_readPowerChangeValueWithSucBlock:(void (^)(id returnData))sucBlock
                                 failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the specifications of the device.
+/*
+ @{
+ @"specification":0             //0:European and French specifications    1:U.S. specifications   2:U.K specifications
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readSpecificationsOfDeviceWithSucBlock:(void (^)(id returnData))sucBlock
+                                      failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device overvoltage protection information.
+/*
+ @{
+     @"isOn":@(isOn),
+     @"overThreshold":@"100",           //V
+     @"timeThreshold":@"10",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readOverVoltageProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                     failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device sagvoltage protection information.
+/*
+ @{
+     @"isOn":@(isOn),
+     @"overThreshold":@"10",            //V
+     @"timeThreshold":@"10",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readSagVoltageProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device overcurrent protection information.
+/*
+ @{
+     @"isOn":@(isOn),
+     @"overThreshold":@"10",        //Unit:0.1A
+     @"timeThreshold":@"10",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readOverCurrentProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                     failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device overload protection information.
+/*
+ @{
+     @"isOn":@(isOn),
+     @"overThreshold":@"100",           //W
+     @"timeThreshold":@"10",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readOverLoadProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the notification status when the device load status changes.
+/*
+ @{
+     @"loadStart":@(NO),
+     @"loadStop":@(YES),
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLoadStatusNotificationsWithSucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the negative number P0 of the socket when the socket is not included in the load.
+/*
+ @{
+ @"value":@"6"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLoadStatusThresholdWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** Device Control ************************************************
 

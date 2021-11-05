@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithType:(mp_overProtectionType)type;
 
+- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

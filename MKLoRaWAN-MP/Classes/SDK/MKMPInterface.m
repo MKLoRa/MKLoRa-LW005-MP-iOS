@@ -243,6 +243,62 @@
                  failedBlock:failedBlock];
 }
 
++ (void)mp_readSpecificationsOfDeviceWithSucBlock:(void (^)(id returnData))sucBlock
+                                      failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadSpecificationsOfDeviceOperation
+                     cmdFlag:@"46"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readOverVoltageProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                     failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadOverVoltageProtectionOperation
+                     cmdFlag:@"47"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readSagVoltageProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadSagVoltageProtectionOperation
+                     cmdFlag:@"48"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readOverCurrentProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                     failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadOverCurrentProtectionOperation
+                     cmdFlag:@"49"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readOverLoadProtectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadOverLoadProtectionOperation
+                     cmdFlag:@"4a"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readLoadStatusNotificationsWithSucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadLoadStatusNotificationsOperation
+                     cmdFlag:@"4b"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readLoadStatusThresholdWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadLoadStatusThresholdOperation
+                     cmdFlag:@"4c"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
 #pragma mark **************************************** Device Control ************************************************
 + (void)mp_readSwitchStatusWithSucBlock:(void (^)(id returnData))sucBlock
                             failedBlock:(void (^)(NSError *error))failedBlock {

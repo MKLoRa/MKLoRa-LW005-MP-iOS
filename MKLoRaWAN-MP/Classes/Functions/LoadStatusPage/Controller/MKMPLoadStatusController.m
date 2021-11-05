@@ -60,7 +60,12 @@ MKTextFieldCellDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
-    [self loadSectionDatas];
+    [self readDatasFromDevice];
+}
+
+#pragma mark - super method
+- (void)rightButtonMethod {
+    [self saveDataToDevice];
 }
 
 #pragma mark - UITableViewDelegate
@@ -150,6 +155,35 @@ MKTextFieldCellDelegate>
     }
 }
 
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self loadSectionDatas];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)saveDataToDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel configDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
 #pragma mark - loadSectionDatas
 - (void)loadSectionDatas {
     [self loadSection0Datas];
@@ -167,7 +201,7 @@ MKTextFieldCellDelegate>
 - (void)loadSection0Datas {
     MKMPLoadStatusCellModel *cellModel = [[MKMPLoadStatusCellModel alloc] init];
     cellModel.msg = @"Load Status";
-    cellModel.icon = (self.dataModel.loadStatus ? LOADICON(@"MKLoRaWAN-MP", @"MKMPLoadStatusController", @"mp_wifisignalIcon.png") : LOADICON(@"MKLoRaWAN-MP", @"MKMPLoadStatusController", @"mp_wifisignalIcon.png"));
+    cellModel.icon = (self.dataModel.loadStatus ? LOADICON(@"MKLoRaWAN-MP", @"MKMPLoadStatusController", @"mp_loadStatusPage_loaded.png") : LOADICON(@"MKLoRaWAN-MP", @"MKMPLoadStatusController", @"mp_loadStatusPage_unLoad.png"));
     [self.section0List addObject:cellModel];
 }
 
