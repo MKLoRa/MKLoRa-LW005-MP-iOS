@@ -1,0 +1,323 @@
+//
+//  MKMPInterface.h
+//  MKLoRaWAN-MP_Example
+//
+//  Created by aa on 2021/11/1.
+//  Copyright © 2021 aadyx2007@163.com. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "MKMPSDKNormalDefines.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface MKMPInterface : NSObject
+
+#pragma mark ****************************************Device Service Information************************************************
+
+/// Read product model
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readDeviceModelWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device firmware information
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readFirmwareWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device hardware information
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readHardwareWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device software information
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readSoftwareWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device manufacturer information
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readManufacturerWithSucBlock:(void (^)(id returnData))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+#pragma mark **************************************** LoRaWAN ************************************************
+
+/// Read LoRaWAN network access type.
+/*
+ 1:ABP
+ 2:OTAA
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanModemWithSucBlock:(void (^)(id returnData))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the DEVEUI of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanDEVEUIWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the APPEUI of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanAPPEUIWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the APPKEY of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanAPPKEYWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the DEVADDR of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanDEVADDRWithSucBlock:(void (^)(id returnData))sucBlock
+                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the APPSKEY of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanAPPSKEYWithSucBlock:(void (^)(id returnData))sucBlock
+                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the NWKSKEY of LoRaWAN.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanNWKSKEYWithSucBlock:(void (^)(id returnData))sucBlock
+                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the region information of LoRaWAN.
+/*
+ 0:AS923 
+ 1:AU915
+ 2:CN470
+ 3:CN779
+ 4:EU433
+ 5:EU868
+ 6:KR920
+ 7:IN865
+ 8:US915
+ 9:RU864
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanRegionWithSucBlock:(void (^)(id returnData))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the work mode of LoRaWAN.
+/*
+ 0:Class A. 
+ 2:Class C.
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanClassTypeWithSucBlock:(void (^)(id returnData))sucBlock
+                                failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read lorawan upstream data type.
+/*
+ 0:Non-acknowledgement frame.
+ 1:Confirm the frame.
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanMessageTypeWithSucBlock:(void (^)(id returnData))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read lorawan CH.It is only used for US915,AU915,CN470.
+/*
+ @{
+ @"CHL":0
+ @"CHH":2
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanCHWithSucBlock:(void (^)(id returnData))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read lorawan duty cycle status.It is only used for EU868,CN779, EU433 and RU864.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanDutyCycleStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                      failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read lorawan DR.It is only used for CN470, CN779, EU433, EU868,KR920, IN865, RU864.
+/*
+ @{
+ @"DR":1
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanDRWithSucBlock:(void (^)(id returnData))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read Uplink Strategy  Of Lorawan.
+/*
+ @{
+ @"ADR":@(YES),
+ @"DRFPL":@"0",         //DR For Payload Low.
+ @"DRFPH":@"1",         //DR For Payload High.
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanUplinkStrategyWithSucBlock:(void (^)(id returnData))sucBlock
+                                     failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read The Max retransmission times  Of Lorawan.(Only for the message type is confirmed.)
+/*
+ @{
+ @"number":@"2"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanMaxRetransmissionTimesWithSucBlock:(void (^)(id returnData))sucBlock
+                                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+
+/// Read lorawan devtime command synchronization interval.(Hour)
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanTimeSyncIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read Network Check Interval Of Lorawan.(Hour)
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanNetworkCheckIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                           failedBlock:(void (^)(NSError *error))failedBlock;
+
+#pragma mark **************************************** BLE Params ************************************************
+
+#pragma mark **************************************** 功能参数 ************************************************
+
+/// Default Operating mode after the device is repowered.
+/*
+ @{
+ @"mode":@"1"
+ }
+ 0: Off mode
+ 1:On mode
+ 2:Revert to last mode
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readRepoweredDefaultModeWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// The report interval of switch payloads.
+/*
+ @{
+ @"interval":@"66"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readReportIntervalOfSwitchPayloadsWithSucBlock:(void (^)(id returnData))sucBlock
+                                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// The report interval of electricity payloads.
+/*
+ @{
+ @"interval":@"66"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readReportIntervalOfElectricityWithSucBlock:(void (^)(id returnData))sucBlock
+                                           failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the energy storage and reporting interval.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readEnergyIntervalParamsWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// When the percentage change in power exceeds power change value, device will immediately store the energy data.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readPowerChangeValueWithSucBlock:(void (^)(id returnData))sucBlock
+                                failedBlock:(void (^)(NSError *error))failedBlock;
+
+#pragma mark **************************************** Device Control ************************************************
+
+/// Read the switch status of device.
+/*
+ @{
+ @"isOn":@(YES)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readSwitchStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the current network status of LoRaWAN.
+/*
+    0:Connecting
+    1:OTAA network access or ABP mode.
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLorawanNetworkStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device load status.
+/*
+ @{
+ @"load":@(YES)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLoadStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the Electricity of the device.
+/*
+ @{
+ @"voltage":@"110.2",           //(V)
+ @"current":@"0.001",           //(A)
+ @"power":@"1.1",               //(W)
+ @"frequencyOfCurrent":@"1.111",//Frequency of current(Hz)
+ @"powerFactor":@"1",           //Power factor(%)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readElectricityDataWithSucBlock:(void (^)(id returnData))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the Energy of the device.
+/*
+ @{
+     @"totalRounds":@"10000",
+     @"lastHourRounds":@"100",
+     @"EC":@"50",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readEnergyDataWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the mac address of the device.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readMacAddressWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+@end
+
+NS_ASSUME_NONNULL_END
