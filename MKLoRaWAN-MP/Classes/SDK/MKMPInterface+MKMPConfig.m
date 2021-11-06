@@ -254,7 +254,92 @@
 }
 
 #pragma mark **************************************** BLE Params ************************************************
++ (void)mp_configDeviceName:(NSString *)deviceName
+                   sucBlock:(void (^)(void))sucBlock
+                failedBlock:(void (^)(NSError *error))failedBlock {
+    if (![deviceName isKindOfClass:NSString.class] || deviceName.length > 16) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *tempString = @"";
+    for (NSInteger i = 0; i < deviceName.length; i ++) {
+        int asciiCode = [deviceName characterAtIndex:i];
+        tempString = [tempString stringByAppendingString:[NSString stringWithFormat:@"%1lx",(unsigned long)asciiCode]];
+    }
+    NSString *lenString = [NSString stringWithFormat:@"%1lx",(long)deviceName.length];
+    if (lenString.length == 1) {
+        lenString = [@"0" stringByAppendingString:lenString];
+    }
+    NSString *commandString = [NSString stringWithFormat:@"ed0121%@%@",lenString,tempString];
+    [self configDataWithTaskID:mk_mp_taskConfigDeviceNameOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
 
++ (void)mp_configAdvInterval:(NSInteger)interval
+                    sucBlock:(void (^)(void))sucBlock
+                 failedBlock:(void (^)(NSError *error))failedBlock {
+    if (interval < 1 || interval > 100) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:1];
+    NSString *commandString = [@"ed012201" stringByAppendingString:value];
+    [self configDataWithTaskID:mk_mp_taskConfigAdvIntervalOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configTxPower:(mk_mp_txPower)txPower
+                sucBlock:(void (^)(void))sucBlock
+             failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = [@"ed012301" stringByAppendingString:[MKMPSDKDataAdopter fetchTxPower:txPower]];
+    [self configDataWithTaskID:mk_mp_taskConfigTxPowerOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configConnectableStatus:(BOOL)connectable
+                          sucBlock:(void (^)(void))sucBlock
+                       failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = (connectable ? @"ed01240101" : @"ed01240100");
+    [self configDataWithTaskID:mk_mp_taskConfigConnectableStatusOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configNeedPassword:(BOOL)need
+                     sucBlock:(void (^)(void))sucBlock
+                  failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = (need ? @"ed01250101" : @"ed01250100");
+    [self configDataWithTaskID:mk_mp_taskConfigNeedPasswordOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configPassword:(NSString *)password
+                 sucBlock:(void (^)(void))sucBlock
+              failedBlock:(void (^)(NSError *error))failedBlock {
+    if (!MKValidStr(password) || password.length != 8) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *commandData = @"";
+    for (NSInteger i = 0; i < password.length; i ++) {
+        int asciiCode = [password characterAtIndex:i];
+        commandData = [commandData stringByAppendingString:[NSString stringWithFormat:@"%1lx",(unsigned long)asciiCode]];
+    }
+    NSString *commandString = [@"ed012608" stringByAppendingString:commandData];
+    [self configDataWithTaskID:mk_mp_taskConfigPasswordOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
 
 #pragma mark **************************************** 功能参数 ************************************************
 
@@ -475,6 +560,72 @@
     NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:threshold byteLen:1];
     NSString *commandString = [@"ed014c01" stringByAppendingString:value];
     [self configDataWithTaskID:mk_mp_taskConfigLoadStatusThresholdOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configPowerIndicatorColor:(mk_mp_ledColorType)colorType
+                       colorProtocol:(nullable id <mk_mp_ledColorConfigProtocol>)protocol
+                        productModel:(mk_mp_productModel)productModel
+                            sucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock {
+    if (![MKMPSDKDataAdopter checkLEDColorParams:colorType colorProtocol:protocol productModel:productModel]) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *typeString = [MKBLEBaseSDKAdopter fetchHexValue:colorType byteLen:1];
+    NSString *blue = [MKBLEBaseSDKAdopter fetchHexValue:protocol.b_color byteLen:2];
+    NSString *green = [MKBLEBaseSDKAdopter fetchHexValue:protocol.g_color byteLen:2];
+    NSString *yellow = [MKBLEBaseSDKAdopter fetchHexValue:protocol.y_color byteLen:2];
+    NSString *orange = [MKBLEBaseSDKAdopter fetchHexValue:protocol.o_color byteLen:2];
+    NSString *red = [MKBLEBaseSDKAdopter fetchHexValue:protocol.r_color byteLen:2];
+    NSString *purple = [MKBLEBaseSDKAdopter fetchHexValue:protocol.p_color byteLen:2];
+    NSString *commandString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",@"ed014d0d",typeString,blue,green,yellow,orange,red,purple];
+    [self configDataWithTaskID:mk_mp_taskConfigPowerIndicatorColorOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configTimeZone:(NSInteger)timeZone
+                 sucBlock:(void (^)(void))sucBlock
+              failedBlock:(void (^)(NSError *error))failedBlock {
+    if (timeZone < -24 || timeZone > 28) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *zoneString = [MKBLEBaseSDKAdopter hexStringFromSignedNumber:timeZone];
+    NSString *commandString = [@"ed014e01" stringByAppendingString:zoneString];
+    [self configDataWithTaskID:mk_mp_taskConfigTimeZoneOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configCountDownReportInterval:(NSInteger)interval
+                                sucBlock:(void (^)(void))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock {
+    if (interval < 10 || interval > 60) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *valueString = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:1];
+    NSString *commandString = [@"ed014f01" stringByAppendingString:valueString];
+    [self configDataWithTaskID:mk_mp_taskConfigCountDownReportIntervalOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)mp_configNetworkIndicatorStatus:(BOOL)network
+                   powerIndicatorStatus:(BOOL)power
+                               sucBlock:(void (^)(void))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *powerValue = (power ? @"01" : @"00");
+    NSString *networkValue = (network ? @"01" : @"00");
+    NSString *commandString = [NSString stringWithFormat:@"%@%@%@",@"ed015002",powerValue,networkValue];
+    [self configDataWithTaskID:mk_mp_taskConfigLEDIndicatorOperation
                           data:commandString
                       sucBlock:sucBlock
                    failedBlock:failedBlock];

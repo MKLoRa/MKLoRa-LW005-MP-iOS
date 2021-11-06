@@ -199,6 +199,71 @@ NS_ASSUME_NONNULL_BEGIN
                                            failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** BLE Params ************************************************
+/// Read the broadcast name of the device.
+/*
+ @{
+ @"deviceName":@"MOKO"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readDeviceNameWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read device broadcast time interval.(Unit:100ms)
+/*
+ @{
+ @"interval":@"10"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readAdvIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the txPower of device.
+/*
+ @{
+ @"txPower":@"0dBm"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readTxPowerWithSucBlock:(void (^)(id returnData))sucBlock
+                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the Bluetooth connection status of the device.When the device is set to be unconnectable, 3min is allowed to connect after the beacon mode is turned on.
+/*
+ @{
+ @"connectable":@(YES),
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readDeviceConnectableWithSucBlock:(void (^)(id returnData))sucBlock
+                                 failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Is a password required when the device is connected.
+/*
+ @{
+ @"need":@(YES)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readConnectationNeedPasswordWithSucBlock:(void (^)(id returnData))sucBlock
+                                        failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// When the connected device requires a password, read the current connection password.
+/*
+ @{
+ @"password":@"xxxxxxxxx"
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readPasswordWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** 功能参数 ************************************************
 
@@ -346,6 +411,58 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock Failure callback
 + (void)mp_readLoadStatusThresholdWithSucBlock:(void (^)(id returnData))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Power Indicator Color
+/*
+ @{
+     @"colorType":@"0",
+     @"blue":@"66",
+     @"green":@"77",
+     @"yellow":@"88",
+     @"orange":@"99",
+     @"red":@"100",
+     @"purple":@"110",
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readPowerIndicatorColorWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Read the time zone of the device.
+/*
+ @{
+ @"timeZone":@(-23)       //UTC-11:30
+ }
+ //-24~28((The time zone is in units of 30 minutes, UTC-12:00~UTC+14:00))
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readTimeZoneWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// The report interval of countdown payloads.
+/*
+ @{
+ @"interval":@(15)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readCountDownReportIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Network Indicator Status/Power Indicator Status
+/*
+ @{
+     @"powerStatus":@(YES),
+     @"networkStatus":@(NO),
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_readLEDIndicatorStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** Device Control ************************************************
 

@@ -203,6 +203,47 @@
             @"interval":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
         };
         operationID = mk_mp_taskReadLorawanNetworkCheckIntervalOperation;
+    }else if ([cmd isEqualToString:@"21"]) {
+        //读取设备广播名称
+        NSData *nameData = [data subdataWithRange:NSMakeRange(4, data.length - 4)];
+        NSString *deviceName = [[NSString alloc] initWithData:nameData encoding:NSUTF8StringEncoding];
+        resultDic = @{
+            @"deviceName":(MKValidStr(deviceName) ? deviceName : @""),
+        };
+        operationID = mk_mp_taskReadDeviceNameOperation;
+    }else if ([cmd isEqualToString:@"22"]) {
+        //读取广播间隔
+        resultDic = @{
+            @"interval":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_mp_taskReadAdvIntervalOperation;
+    }else if ([cmd isEqualToString:@"23"]) {
+        //读取设备Tx Power
+        NSString *txPower = [self fetchTxPowerValueString:content];
+        resultDic = @{@"txPower":txPower};
+        operationID = mk_mp_taskReadTxPowerOperation;
+    }else if ([cmd isEqualToString:@"24"]) {
+        //读取可连接状态
+        BOOL connectable = ([content isEqualToString:@"01"]);
+        resultDic = @{
+            @"connectable":@(connectable)
+        };
+        operationID = mk_mp_taskReadDeviceConnectableOperation;
+    }else if ([cmd isEqualToString:@"25"]) {
+        //读取密码开关
+        BOOL need = ([content isEqualToString:@"01"]);
+        resultDic = @{
+            @"need":@(need)
+        };
+        operationID = mk_mp_taskReadConnectationNeedPasswordOperation;
+    }else if ([cmd isEqualToString:@"26"]) {
+        //读取密码
+        NSData *passwordData = [data subdataWithRange:NSMakeRange(4, data.length - 4)];
+        NSString *password = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
+        resultDic = @{
+            @"password":(MKValidStr(password) ? password : @""),
+        };
+        operationID = mk_mp_taskReadPasswordOperation;
     }else if ([cmd isEqualToString:@"41"]) {
         //读取设备上电后模式选择
         NSString *mode = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)];
@@ -300,6 +341,46 @@
             @"value":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
         };
         operationID = mk_mp_taskReadLoadStatusThresholdOperation;
+    }else if ([cmd isEqualToString:@"4d"]) {
+        //读取功率指示灯
+        NSString *colorType = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, 2)];
+        NSString *blue = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(2, 4)];
+        NSString *green = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(6, 4)];
+        NSString *yellow = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(10, 4)];
+        NSString *orange = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(14, 4)];
+        NSString *red = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(18, 4)];
+        NSString *purple = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(22, 4)];
+        resultDic = @{
+            @"colorType":colorType,
+            @"blue":blue,
+            @"green":green,
+            @"yellow":yellow,
+            @"orange":orange,
+            @"red":red,
+            @"purple":purple,
+        };
+        operationID = mk_mp_taskReadPowerIndicatorColorOperation;
+    }else if ([cmd isEqualToString:@"4e"]) {
+        //读取时区
+        resultDic = @{
+            @"timeZone":[MKBLEBaseSDKAdopter signedHexTurnString:content],
+        };
+        operationID = mk_mp_taskReadTimeZoneOperation;
+    }else if ([cmd isEqualToString:@"4f"]) {
+        //读取倒计时通知间隔
+        resultDic = @{
+            @"interval":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_mp_taskReadCountDownReportIntervalOperation;
+    }else if ([cmd isEqualToString:@"50"]) {
+        //读取指示灯开关
+        BOOL powerStatus = ([[content substringWithRange:NSMakeRange(0, 2)] isEqualToString:@"01"]);
+        BOOL networkStatus = ([[content substringWithRange:NSMakeRange(2, 2)] isEqualToString:@"01"]);
+        resultDic = @{
+            @"powerStatus":@(powerStatus),
+            @"networkStatus":@(networkStatus),
+        };
+        operationID = mk_mp_taskReadLEDIndicatorStatusOperation;
     }else if ([cmd isEqualToString:@"61"]) {
         //读取开关状态
         BOOL isOn = ([content isEqualToString:@"01"]);
@@ -412,6 +493,24 @@
     }else if ([cmd isEqualToString:@"11"]) {
         //配置LoRaWAN LinkCheckReq指令间隔
         operationID = mk_mp_taskConfigNetworkCheckIntervalOperation;
+    }else if ([cmd isEqualToString:@"21"]) {
+        //配置广播名称
+        operationID = mk_mp_taskConfigDeviceNameOperation;
+    }else if ([cmd isEqualToString:@"22"]) {
+        //配置广播间隔
+        operationID = mk_mp_taskConfigAdvIntervalOperation;
+    }else if ([cmd isEqualToString:@"23"]) {
+        //配置发射功率
+        operationID = mk_mp_taskConfigTxPowerOperation;
+    }else if ([cmd isEqualToString:@"24"]) {
+        //配置可连接状态
+        operationID = mk_mp_taskConfigConnectableStatusOperation;
+    }else if ([cmd isEqualToString:@"25"]) {
+        //配置密码开关
+        operationID = mk_mp_taskConfigNeedPasswordOperation;
+    }else if ([cmd isEqualToString:@"26"]) {
+        //配置密码
+        operationID = mk_mp_taskConfigPasswordOperation;
     }else if ([cmd isEqualToString:@"41"]) {
         //配置默认开关上电状态
         operationID = mk_mp_taskConfigRepoweredDefaultModeOperation;
@@ -445,6 +544,18 @@
     }else if ([cmd isEqualToString:@"4c"]) {
         //配置P0
         operationID = mk_mp_taskConfigLoadStatusThresholdOperation;
+    }else if ([cmd isEqualToString:@"4d"]) {
+        //配置功率指示灯
+        operationID = mk_mp_taskConfigPowerIndicatorColorOperation;
+    }else if ([cmd isEqualToString:@"4e"]) {
+        //配置时区
+        operationID = mk_mp_taskConfigTimeZoneOperation;
+    }else if ([cmd isEqualToString:@"4f"]) {
+        //配置倒计时通知间隔
+        operationID = mk_mp_taskConfigCountDownReportIntervalOperation;
+    }else if ([cmd isEqualToString:@"50"]) {
+        //配置网络和电源指示灯状态
+        operationID = mk_mp_taskConfigLEDIndicatorOperation;
     }else if ([cmd isEqualToString:@"61"]) {
         //配置开关状态
         operationID = mk_mp_taskConfigSwitchStatusOperation;
@@ -465,6 +576,52 @@
         return @{};
     }
     return @{@"returnData":returnData,@"operationID":@(operationID)};
+}
+
++ (NSString *)fetchTxPowerValueString:(NSString *)content {
+    if ([content isEqualToString:@"08"]) {
+        return @"8dBm";
+    }
+    if ([content isEqualToString:@"07"]) {
+        return @"7dBm";
+    }
+    if ([content isEqualToString:@"06"]) {
+        return @"6dBm";
+    }
+    if ([content isEqualToString:@"05"]) {
+        return @"5dBm";
+    }
+    if ([content isEqualToString:@"04"]) {
+        return @"4dBm";
+    }
+    if ([content isEqualToString:@"03"]) {
+        return @"3dBm";
+    }
+    if ([content isEqualToString:@"02"]) {
+        return @"2dBm";
+    }
+    if ([content isEqualToString:@"00"]) {
+        return @"0dBm";
+    }
+    if ([content isEqualToString:@"fc"]) {
+        return @"-4dBm";
+    }
+    if ([content isEqualToString:@"f8"]) {
+        return @"-8dBm";
+    }
+    if ([content isEqualToString:@"f4"]) {
+        return @"-12dBm";
+    }
+    if ([content isEqualToString:@"f0"]) {
+        return @"-16dBm";
+    }
+    if ([content isEqualToString:@"ec"]) {
+        return @"-20dBm";
+    }
+    if ([content isEqualToString:@"d8"]) {
+        return @"-40dBm";
+    }
+    return @"0dBm";
 }
 
 @end

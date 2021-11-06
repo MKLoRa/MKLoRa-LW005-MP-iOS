@@ -334,7 +334,7 @@ MKLoRaSettingCHCellDelegate>
             return;
         }
         //高级设置开关状态打开,Max retransmission times: 数据重传次数，当message type设置为 confirmed 时，此项才显示，否则隐藏
-        [self.tableView mk_reloadSection:11 withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView mk_reloadSection:10 withRowAnimation:UITableViewRowAnimationNone];
         return;
         
     }
@@ -437,7 +437,7 @@ MKLoRaSettingCHCellDelegate>
     if (index == 1) {
         //DR For Payload
         self.dataModel.DRH = [value integerValue];
-        MKLoRaSettingCHCellModel *cellModel = self.optionsList7[0];
+        MKLoRaSettingCHCellModel *cellModel = self.optionsList6[0];
         cellModel.chHighIndex = chHighIndex;
         cellModel.chLowValueList = [self.dataModel DRLValueList];
         return;
@@ -462,7 +462,7 @@ MKLoRaSettingCHCellDelegate>
     if (index == 1) {
         //DR For Payload
         self.dataModel.DRL = [value integerValue];
-        MKLoRaSettingCHCellModel *cellModel = self.optionsList7[0];
+        MKLoRaSettingCHCellModel *cellModel = self.optionsList6[0];
         cellModel.chLowIndex = chLowIndex;
         cellModel.chHighValueList = [self.dataModel DRHValueList];
         return;
@@ -678,7 +678,7 @@ MKLoRaSettingCHCellDelegate>
     classModel.msg = @"Device Type";
     classModel.dataList = @[@"Class A",@"Class C"];
     classModel.buttonLabelFont = MKFont(13.f);
-    classModel.dataListIndex = self.dataModel.messageType;
+    classModel.dataListIndex = self.dataModel.classType;
     [self.section2List addObject:classModel];
     
     MKTextButtonCellModel *messageModel = [[MKTextButtonCellModel alloc] init];

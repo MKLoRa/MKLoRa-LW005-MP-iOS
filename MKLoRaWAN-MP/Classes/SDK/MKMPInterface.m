@@ -200,6 +200,53 @@
 
 #pragma mark **************************************** BLE Params ************************************************
 
++ (void)mp_readDeviceNameWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadDeviceNameOperation
+                     cmdFlag:@"21"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readAdvIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadAdvIntervalOperation
+                     cmdFlag:@"22"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readTxPowerWithSucBlock:(void (^)(id returnData))sucBlock
+                       failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadTxPowerOperation
+                     cmdFlag:@"23"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readDeviceConnectableWithSucBlock:(void (^)(id returnData))sucBlock
+                                 failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadDeviceConnectableOperation
+                     cmdFlag:@"24"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readConnectationNeedPasswordWithSucBlock:(void (^)(id returnData))sucBlock
+                                        failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadConnectationNeedPasswordOperation
+                     cmdFlag:@"25"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readPasswordWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadPasswordOperation
+                     cmdFlag:@"25"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
 
 #pragma mark **************************************** 功能参数 ************************************************
 
@@ -295,6 +342,38 @@
                                    failedBlock:(void (^)(NSError *error))failedBlock {
     [self readDataWithTaskID:mk_mp_taskReadLoadStatusThresholdOperation
                      cmdFlag:@"4c"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readPowerIndicatorColorWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadPowerIndicatorColorOperation
+                     cmdFlag:@"4d"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readTimeZoneWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadTimeZoneOperation
+                     cmdFlag:@"4e"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readCountDownReportIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadCountDownReportIntervalOperation
+                     cmdFlag:@"4f"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)mp_readLEDIndicatorStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_mp_taskReadLEDIndicatorStatusOperation
+                     cmdFlag:@"50"
                     sucBlock:sucBlock
                  failedBlock:failedBlock];
 }

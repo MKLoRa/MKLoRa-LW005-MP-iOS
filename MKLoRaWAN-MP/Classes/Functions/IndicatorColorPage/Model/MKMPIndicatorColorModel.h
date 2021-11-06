@@ -10,11 +10,11 @@
 
 #import "MKMPEnumerateDefine.h"
 
+#import "MKMPSDKNormalDefines.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKMPIndicatorColorModel : NSObject
-
-@property (nonatomic, assign)mp_productModel productModel;
+@interface MKMPIndicatorColorModel : NSObject<mk_mp_ledColorConfigProtocol>
 
 @property (nonatomic, assign)mp_ledColorType colorType;
 
@@ -65,6 +65,10 @@ NS_ASSUME_NONNULL_BEGIN
  British specifications:r_color < p_color <=  3588.
  */
 @property (nonatomic, assign)NSInteger p_color;
+
+- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

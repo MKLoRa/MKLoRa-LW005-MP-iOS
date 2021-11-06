@@ -157,6 +157,53 @@ NS_ASSUME_NONNULL_BEGIN
                                  failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** BLE Params ************************************************
+/// Configure the broadcast name of the device.
+/// @param deviceName 0~16 ascii characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configDeviceName:(NSString *)deviceName
+                   sucBlock:(void (^)(void))sucBlock
+                failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure beacon broadcast time interval.
+/// @param interval 1 x 100ms ~ 100 x 100ms
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configAdvInterval:(NSInteger)interval
+                    sucBlock:(void (^)(void))sucBlock
+                 failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the txPower of device.
+/// @param txPower txPower
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configTxPower:(mk_mp_txPower)txPower
+                sucBlock:(void (^)(void))sucBlock
+             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the connectable status of the device.
+/// @param connectable connectable
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configConnectableStatus:(BOOL)connectable
+                          sucBlock:(void (^)(void))sucBlock
+                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Do you need a password when configuring the device connection.
+/// @param need need
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configNeedPassword:(BOOL)need
+                     sucBlock:(void (^)(void))sucBlock
+                  failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the connection password of device.
+/// @param password 8-character ascii code
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configPassword:(NSString *)password
+                 sucBlock:(void (^)(void))sucBlock
+              failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** 功能参数 ************************************************
 /// Default Operating mode after the device is repowered.
@@ -274,6 +321,45 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)mp_configLoadStatusThreshold:(NSInteger)threshold
                             sucBlock:(void (^)(void))sucBlock
                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Power Indicator Color
+/// @param colorType colorType
+/// @param protocol  mk_mp_ledColorConfigProtocol,Note: When colorType is one of mk_mp_ledColorTransitionSmoothly and mk_mp_ledColorTransitionDirectly, it cannot be empty, other types are not checked.
+/// @param productModel Product model of the device.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configPowerIndicatorColor:(mk_mp_ledColorType)colorType
+                       colorProtocol:(nullable id <mk_mp_ledColorConfigProtocol>)protocol
+                        productModel:(mk_mp_productModel)productModel
+                            sucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Configure the time zone of the device.
+/// @param timeZone -24~28  //(The time zone is in units of 30 minutes, UTC-12:00~UTC+14:00.eg:timeZone = -23 ,--> UTC-11:30)
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configTimeZone:(NSInteger)timeZone
+                 sucBlock:(void (^)(void))sucBlock
+              failedBlock:(void (^)(NSError *error))failedBlock;
+
+
+/// The report interval of countdown payloads.
+/// @param interval 10s~60s
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configCountDownReportInterval:(NSInteger)interval
+                                sucBlock:(void (^)(void))sucBlock
+                             failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Network Indicator Status/Power Indicator Status
+/// @param network isOn
+/// @param power isOn
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configNetworkIndicatorStatus:(BOOL)network
+                   powerIndicatorStatus:(BOOL)power
+                               sucBlock:(void (^)(void))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark **************************************** Device Control ************************************************
 

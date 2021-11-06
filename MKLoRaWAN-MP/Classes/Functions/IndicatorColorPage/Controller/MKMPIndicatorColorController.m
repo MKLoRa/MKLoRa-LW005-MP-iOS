@@ -54,7 +54,12 @@ MKMPIndicatorColorCellDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
-    [self loadSectionDatas];
+    [self readDatasFromDevice];
+}
+
+#pragma mark - super method
+- (void)rightButtonMethod {
+    [self saveDataToDevice];
 }
 
 #pragma mark - UITableViewDelegate
@@ -87,6 +92,48 @@ MKMPIndicatorColorCellDelegate>
 - (void)mp_ledColorChanged:(NSString *)value index:(NSInteger)index {
     MKMPIndicatorColorCellModel *cellModel = self.dataList[index];
     cellModel.textValue = value;
+}
+
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self loadSectionDatas];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)saveDataToDevice {
+    MKMPIndicatorColorCellModel *bModel = self.dataList[0];
+    self.dataModel.b_color = [bModel.textValue integerValue];
+    MKMPIndicatorColorCellModel *gModel = self.dataList[1];
+    self.dataModel.g_color = [gModel.textValue integerValue];
+    MKMPIndicatorColorCellModel *yModel = self.dataList[2];
+    self.dataModel.y_color = [yModel.textValue integerValue];
+    MKMPIndicatorColorCellModel *oModel = self.dataList[3];
+    self.dataModel.o_color = [oModel.textValue integerValue];
+    MKMPIndicatorColorCellModel *rModel = self.dataList[4];
+    self.dataModel.r_color = [rModel.textValue integerValue];
+    MKMPIndicatorColorCellModel *pModel = self.dataList[5];
+    self.dataModel.p_color = [pModel.textValue integerValue];
+    
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel configDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - loadSectionDatas

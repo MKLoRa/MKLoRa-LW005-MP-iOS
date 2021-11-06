@@ -33,6 +33,12 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskReadLorawanNetworkCheckIntervalOperation, //读取网络确认间隔
     
 #pragma mark - 蓝牙参数读取
+    mk_mp_taskReadDeviceNameOperation,                  //读取设备广播名称
+    mk_mp_taskReadAdvIntervalOperation,                 //读取广播间隔
+    mk_mp_taskReadTxPowerOperation,                     //读取发射功率
+    mk_mp_taskReadDeviceConnectableOperation,           //读取可连接状态
+    mk_mp_taskReadConnectationNeedPasswordOperation,    //读取密码开关
+    mk_mp_taskReadPasswordOperation,                    //读取设备连接密码
     
 #pragma mark - 功能参数读取
     mk_mp_taskReadRepoweredDefaultModeOperation,        //读取设备开关默认上电状态
@@ -47,6 +53,10 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskReadOverLoadProtectionOperation,              //读取过载保护信息
     mk_mp_taskReadLoadStatusNotificationsOperation,         //读取负载通知开关
     mk_mp_taskReadLoadStatusThresholdOperation,             //读取P0状态
+    mk_mp_taskReadPowerIndicatorColorOperation,             //读取功率指示灯
+    mk_mp_taskReadTimeZoneOperation,                        //读取设备时区
+    mk_mp_taskReadCountDownReportIntervalOperation,         //读取倒计时通知间隔
+    mk_mp_taskReadLEDIndicatorStatusOperation,              //读取网络和电源指示灯开关状态
     
 #pragma mark - 设备控制参数读取
     mk_mp_taskReadSwitchStatusOperation,            //读取设备开关状态
@@ -76,6 +86,12 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskConfigNetworkCheckIntervalOperation,      //配置LoRaWAN的LinkCheckReq间隔
     
 #pragma mark - 蓝牙参数
+    mk_mp_taskConfigDeviceNameOperation,                //配置设备广播名称
+    mk_mp_taskConfigAdvIntervalOperation,               //配置广播间隔
+    mk_mp_taskConfigTxPowerOperation,                   //配置txPower
+    mk_mp_taskConfigConnectableStatusOperation,         //配置可连接状态
+    mk_mp_taskConfigNeedPasswordOperation,              //配置密码开关
+    mk_mp_taskConfigPasswordOperation,                  //配置密码
     
 #pragma mark - 功能参数
     mk_mp_taskConfigRepoweredDefaultModeOperation,      //配置设备开关默认上电状态
@@ -89,6 +105,10 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
     mk_mp_taskConfigOverLoadOperation,                          //配置过载保护信息
     mk_mp_taskConfigLoadStatusNotificationsOperation,           //配置负载通知开关
     mk_mp_taskConfigLoadStatusThresholdOperation,               //配置P0
+    mk_mp_taskConfigPowerIndicatorColorOperation,               //配置功率指示灯
+    mk_mp_taskConfigTimeZoneOperation,                          //配置时区
+    mk_mp_taskConfigCountDownReportIntervalOperation,           //配置倒计时通知间隔
+    mk_mp_taskConfigLEDIndicatorOperation,                      //配置网络和电源指示灯状态
         
 #pragma mark - 设备控制参数配置
     mk_mp_taskConfigSwitchStatusOperation,              //配置设备开关状态

@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)lorawanRegionString:(mk_mp_loraWanRegion)region;
 
++ (NSString *)fetchTxPower:(mk_mp_txPower)txPower;
+
++ (BOOL)checkLEDColorParams:(mk_mp_ledColorType)colorType
+              colorProtocol:(nullable id <mk_mp_ledColorConfigProtocol>)protocol
+               productModel:(mk_mp_productModel)productModel;
+
 @end
 
 NS_ASSUME_NONNULL_END
