@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)fetchTxPower:(mk_mp_txPower)txPower;
 
+/// 实际值转换为0dBm、4dBm等
+/// @param content content
++ (NSString *)fetchTxPowerValueString:(NSString *)content;
+
 + (BOOL)checkLEDColorParams:(mk_mp_ledColorType)colorType
               colorProtocol:(nullable id <mk_mp_ledColorConfigProtocol>)protocol
                productModel:(mk_mp_productModel)productModel;

@@ -69,6 +69,52 @@
     }
 }
 
++ (NSString *)fetchTxPowerValueString:(NSString *)content {
+    if ([content isEqualToString:@"08"]) {
+        return @"8dBm";
+    }
+    if ([content isEqualToString:@"07"]) {
+        return @"7dBm";
+    }
+    if ([content isEqualToString:@"06"]) {
+        return @"6dBm";
+    }
+    if ([content isEqualToString:@"05"]) {
+        return @"5dBm";
+    }
+    if ([content isEqualToString:@"04"]) {
+        return @"4dBm";
+    }
+    if ([content isEqualToString:@"03"]) {
+        return @"3dBm";
+    }
+    if ([content isEqualToString:@"02"]) {
+        return @"2dBm";
+    }
+    if ([content isEqualToString:@"00"]) {
+        return @"0dBm";
+    }
+    if ([content isEqualToString:@"fc"]) {
+        return @"-4dBm";
+    }
+    if ([content isEqualToString:@"f8"]) {
+        return @"-8dBm";
+    }
+    if ([content isEqualToString:@"f4"]) {
+        return @"-12dBm";
+    }
+    if ([content isEqualToString:@"f0"]) {
+        return @"-16dBm";
+    }
+    if ([content isEqualToString:@"ec"]) {
+        return @"-20dBm";
+    }
+    if ([content isEqualToString:@"d8"]) {
+        return @"-40dBm";
+    }
+    return @"0dBm";
+}
+
 + (BOOL)checkLEDColorParams:(mk_mp_ledColorType)colorType
               colorProtocol:(nullable id <mk_mp_ledColorConfigProtocol>)protocol
                productModel:(mk_mp_productModel)productModel {

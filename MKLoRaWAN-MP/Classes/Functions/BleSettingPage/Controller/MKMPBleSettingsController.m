@@ -23,6 +23,9 @@
 #import "MKNormalTextCell.h"
 #import "MKTextFieldCell.h"
 #import "MKTextSwitchCell.h"
+#import "MKAlertController.h"
+
+#import "MKMPInterface+MKMPConfig.h"
 
 #import "MKMPBleTxPowerCell.h"
 
@@ -48,6 +51,14 @@ MKMPBleTxPowerCellDelegate>
 
 @property (nonatomic, strong)MKMPBleSettingsDataModel *dataModel;
 
+@property (nonatomic, strong)UITextField *passwordTextField;
+
+@property (nonatomic, strong)UITextField *confirmTextField;
+
+@property (nonatomic, copy)NSString *passwordAsciiStr;
+
+@property (nonatomic, copy)NSString *confirmAsciiStr;
+
 @end
 
 @implementation MKMPBleSettingsController
@@ -60,6 +71,7 @@ MKMPBleTxPowerCellDelegate>
     [super viewDidAppear:animated];
     self.view.shiftHeightAsDodgeViewForMLInputDodger = 50.0f;
     [self.view registerAsDodgeViewForMLInputDodgerWithOriginalY:self.view.frame.origin.y];
+    [self readDatasFromDevice];
 }
 
 - (void)viewDidLoad {
@@ -71,6 +83,10 @@ MKMPBleTxPowerCellDelegate>
 #pragma mark - super method
 - (void)leftButtonMethod {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_mp_popToRootViewControllerNotification" object:nil];
+}
+
+- (void)rightButtonMethod {
+    [self saveDataToDevice];
 }
 
 #pragma mark - UITableViewDelegate
@@ -95,7 +111,10 @@ MKMPBleTxPowerCellDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [self configPassword];
+        return;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -191,6 +210,138 @@ MKMPBleTxPowerCellDelegate>
 - (void)mk_mp_txPowerValueChanged:(mk_mp_deviceTxPower)txPower {
     //Tx Power
     self.dataModel.txPower = txPower;
+}
+
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self updateCellDatas];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)saveDataToDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel configDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+#pragma mark - 设置密码
+- (void)configPassword{
+    @weakify(self);
+    NSString *msg = @"Note:The password should be 8 characters.";
+    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Change Password"
+                                                                       message:msg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    alertView.notificationName = @"mk_mp_needDismissAlert";
+    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        @strongify(self);
+        self.passwordTextField = nil;
+        self.passwordTextField = textField;
+        self.passwordAsciiStr = @"";
+        [self.passwordTextField setPlaceholder:@"Enter new password"];
+        [self.passwordTextField addTarget:self
+                                   action:@selector(passwordTextFieldValueChanged:)
+                         forControlEvents:UIControlEventEditingChanged];
+    }];
+    [alertView addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        @strongify(self);
+        self.confirmTextField = nil;
+        self.confirmTextField = textField;
+        self.confirmAsciiStr = @"";
+        [self.confirmTextField setPlaceholder:@"Enter new password again"];
+        [self.confirmTextField addTarget:self
+                                  action:@selector(passwordTextFieldValueChanged:)
+                        forControlEvents:UIControlEventEditingChanged];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertView addAction:cancelAction];
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        [self setPasswordToDevice];
+    }];
+    [alertView addAction:moreAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+}
+
+- (void)passwordTextFieldValueChanged:(UITextField *)textField{
+    NSString *inputValue = textField.text;
+    if (!ValidStr(inputValue)) {
+        textField.text = @"";
+        if (textField == self.passwordTextField) {
+            self.passwordAsciiStr = @"";
+        }else if (textField == self.confirmTextField) {
+            self.confirmAsciiStr = @"";
+        }
+        return;
+    }
+    NSInteger strLen = inputValue.length;
+    NSInteger dataLen = [inputValue dataUsingEncoding:NSUTF8StringEncoding].length;
+    
+    NSString *currentStr = @"";
+    if (textField == self.passwordTextField) {
+        currentStr = self.passwordAsciiStr;
+    }else {
+        currentStr = self.confirmAsciiStr;
+    }
+    if (dataLen == strLen) {
+        //当前输入是ascii字符
+        currentStr = inputValue;
+    }
+    if (currentStr.length > 8) {
+        textField.text = [currentStr substringToIndex:8];
+        if (textField == self.passwordTextField) {
+            self.passwordAsciiStr = [currentStr substringToIndex:8];
+        }else {
+            self.confirmAsciiStr = [currentStr substringToIndex:8];
+        }
+    }else {
+        textField.text = currentStr;
+        if (textField == self.passwordTextField) {
+            self.passwordAsciiStr = currentStr;
+        }else {
+            self.confirmAsciiStr = currentStr;
+        }
+    }
+}
+
+- (void)setPasswordToDevice{
+    NSString *password = self.passwordTextField.text;
+    NSString *confirmpassword = self.confirmTextField.text;
+    if (!ValidStr(password) || !ValidStr(confirmpassword) || password.length != 8 || confirmpassword.length != 8) {
+        [self.view showCentralToast:@"The password should be 8 characters.Please try again."];
+        return;
+    }
+    if (![password isEqualToString:confirmpassword]) {
+        [self.view showCentralToast:@"Password do not match! Please try again."];
+        return;
+    }
+    [[MKHudManager share] showHUDWithTitle:@"Setting..."
+                                     inView:self.view
+                              isPenetration:NO];
+    [MKMPInterface mp_configPassword:password sucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - private method

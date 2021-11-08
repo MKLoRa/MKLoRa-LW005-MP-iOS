@@ -113,4 +113,5 @@ typedef NS_ENUM(NSInteger, mk_mp_taskOperationID) {
 #pragma mark - 设备控制参数配置
     mk_mp_taskConfigSwitchStatusOperation,              //配置设备开关状态
     mk_mp_taskRestartDeviceOperation,                   //配置设备重新入网
+    mk_mp_taskFactoryResetOperation,                    //设备恢复出厂设置
 };

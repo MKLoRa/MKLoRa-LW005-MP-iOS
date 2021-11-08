@@ -23,6 +23,8 @@
 
 #import "MKMPDeviceInfoModel.h"
 
+#import "MKMPUpdateController.h"
+
 @interface MKMPDeviceInfoController ()<UITableViewDelegate,
 UITableViewDataSource,
 MKMPTextButtonCellDelegate>
@@ -137,8 +139,8 @@ MKMPTextButtonCellDelegate>
 - (void)mp_textButtonCell_buttonAction:(NSInteger)index {
     if (index == 0) {
         //DFU
-//        MKMPUpdateController *vc = [[MKMPUpdateController alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        MKMPUpdateController *vc = [[MKMPUpdateController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
 }

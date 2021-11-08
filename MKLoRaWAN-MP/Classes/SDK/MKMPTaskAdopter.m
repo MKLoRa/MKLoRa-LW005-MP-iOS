@@ -219,7 +219,7 @@
         operationID = mk_mp_taskReadAdvIntervalOperation;
     }else if ([cmd isEqualToString:@"23"]) {
         //读取设备Tx Power
-        NSString *txPower = [self fetchTxPowerValueString:content];
+        NSString *txPower = [MKMPSDKDataAdopter fetchTxPowerValueString:content];
         resultDic = @{@"txPower":txPower};
         operationID = mk_mp_taskReadTxPowerOperation;
     }else if ([cmd isEqualToString:@"24"]) {
@@ -562,6 +562,9 @@
     }else if ([cmd isEqualToString:@"66"]) {
         //配置LoRaWAN 入网
         operationID = mk_mp_taskRestartDeviceOperation;
+    }else if ([cmd isEqualToString:@"6a"]) {
+        //恢复出厂设置
+        operationID = mk_mp_taskFactoryResetOperation;
     }
     
     return [self dataParserGetDataSuccess:@{@"success":@(success)} operationID:operationID];
@@ -576,52 +579,6 @@
         return @{};
     }
     return @{@"returnData":returnData,@"operationID":@(operationID)};
-}
-
-+ (NSString *)fetchTxPowerValueString:(NSString *)content {
-    if ([content isEqualToString:@"08"]) {
-        return @"8dBm";
-    }
-    if ([content isEqualToString:@"07"]) {
-        return @"7dBm";
-    }
-    if ([content isEqualToString:@"06"]) {
-        return @"6dBm";
-    }
-    if ([content isEqualToString:@"05"]) {
-        return @"5dBm";
-    }
-    if ([content isEqualToString:@"04"]) {
-        return @"4dBm";
-    }
-    if ([content isEqualToString:@"03"]) {
-        return @"3dBm";
-    }
-    if ([content isEqualToString:@"02"]) {
-        return @"2dBm";
-    }
-    if ([content isEqualToString:@"00"]) {
-        return @"0dBm";
-    }
-    if ([content isEqualToString:@"fc"]) {
-        return @"-4dBm";
-    }
-    if ([content isEqualToString:@"f8"]) {
-        return @"-8dBm";
-    }
-    if ([content isEqualToString:@"f4"]) {
-        return @"-12dBm";
-    }
-    if ([content isEqualToString:@"f0"]) {
-        return @"-16dBm";
-    }
-    if ([content isEqualToString:@"ec"]) {
-        return @"-20dBm";
-    }
-    if ([content isEqualToString:@"d8"]) {
-        return @"-40dBm";
-    }
-    return @"0dBm";
 }
 
 @end

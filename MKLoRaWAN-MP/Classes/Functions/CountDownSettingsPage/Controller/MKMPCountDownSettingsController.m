@@ -52,7 +52,12 @@ MKTextFieldCellDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSubViews];
-    [self loadSectionDatas];
+    [self readDatasFromDevice];
+}
+
+#pragma mark - super method
+- (void)rightButtonMethod {
+    [self saveDataToDevice];
 }
 
 #pragma mark - UITableViewDelegate
@@ -93,26 +98,48 @@ MKTextFieldCellDelegate>
 /// @param value 当前textField的值
 - (void)mk_deviceTextCellValueChanged:(NSInteger)index textValue:(NSString *)value {
     if (index == 0) {
-        //CountDown Time
-        self.dataModel.countDownTime = value;
+        //Report Interval
+        self.dataModel.reportInterval = value;
         MKTextFieldCellModel *cellModel = self.dataList[0];
         cellModel.textFieldValue = value;
         return;
     }
-    if (index == 1) {
-        //Report Interval
-        self.dataModel.reportInterval = value;
-        MKTextFieldCellModel *cellModel = self.dataList[1];
-        cellModel.textFieldValue = value;
-        return;
-    }
+}
+
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self loadSectionDatas];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)saveDataToDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel configDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - loadSectionDatas
 - (void)loadSectionDatas {
     [self loadSection0Datas];
     
-    for (NSInteger i = 0; i < 2; i ++) {
+    for (NSInteger i = 0; i < 1; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];
     }
@@ -121,29 +148,17 @@ MKTextFieldCellDelegate>
 }
 
 - (void)loadSection0Datas {
-    MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
-    cellModel1.index = 0;
-    cellModel1.msg = @"CountDown Time";
-    cellModel1.maxLength = 4;
-    cellModel1.textPlaceholder = @"0 - 1440";
-    cellModel1.textFieldType = mk_realNumberOnly;
-    cellModel1.unit = @"Mins";
-    cellModel1.noteMsg = @"*0 means that disable CountDwon function.";
-    cellModel1.noteMsgColor = RGBCOLOR(102, 102, 102);
-    cellModel1.textFieldValue = self.dataModel.countDownTime;
-    [self.dataList addObject:cellModel1];
-    
-    MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 1;
-    cellModel2.msg = @"Report Interval";
-    cellModel2.maxLength = 2;
-    cellModel2.textPlaceholder = @"10 - 60";
-    cellModel2.textFieldType = mk_realNumberOnly;
-    cellModel2.unit = @"S";
-    cellModel2.noteMsg = @"*The report interval of countdown payloads.";
-    cellModel2.noteMsgColor = RGBCOLOR(102, 102, 102);
-    cellModel2.textFieldValue = self.dataModel.reportInterval;
-    [self.dataList addObject:cellModel2];
+    MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
+    cellModel.index = 0;
+    cellModel.msg = @"Report Interval";
+    cellModel.maxLength = 2;
+    cellModel.textPlaceholder = @"10 - 60";
+    cellModel.textFieldType = mk_realNumberOnly;
+    cellModel.unit = @"S";
+    cellModel.noteMsg = @"*The report interval of countdown payloads.";
+    cellModel.noteMsgColor = RGBCOLOR(102, 102, 102);
+    cellModel.textFieldValue = self.dataModel.reportInterval;
+    [self.dataList addObject:cellModel];
 }
 
 #pragma mark - UI

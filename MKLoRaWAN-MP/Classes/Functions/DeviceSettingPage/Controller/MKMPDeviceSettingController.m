@@ -19,6 +19,11 @@
 #import "MKHudManager.h"
 #import "MKNormalTextCell.h"
 #import "MKTextButtonCell.h"
+#import "MKAlertController.h"
+
+#import "MKMPInterface+MKMPConfig.h"
+
+#import "MKMPDeviceSettingModel.h"
 
 #import "MKMPDeviceInfoController.h"
 
@@ -36,12 +41,19 @@ MKTextButtonCellDelegate>
 
 @property (nonatomic, strong)NSMutableArray *headerList;
 
+@property (nonatomic, strong)MKMPDeviceSettingModel *dataModel;
+
 @end
 
 @implementation MKMPDeviceSettingController
 
 - (void)dealloc {
     NSLog(@"MKMPDeviceSettingController销毁");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self readDatasFromDevice];
 }
 
 - (void)viewDidLoad {
@@ -72,9 +84,14 @@ MKTextButtonCellDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1 && indexPath.row == 0) {
-        //
+        //Device Infomation
         MKMPDeviceInfoController *vc = [[MKMPDeviceInfoController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        //恢复出厂设置
+        [self factoryReset];
         return;
     }
 }
@@ -126,8 +143,74 @@ MKTextButtonCellDelegate>
         //Current Time Zone
         MKTextButtonCellModel *cellModel = self.section0List[0];
         cellModel.dataListIndex = dataListIndex;
+        self.dataModel.timeZone = dataListIndex;
+        [self saveDataToDevice];
         return;
     }
+}
+
+#pragma mark - interface
+- (void)readDatasFromDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        MKTextButtonCellModel *cellModel1 = self.section0List[0];
+        cellModel1.dataListIndex = self.dataModel.timeZone;
+        [self.tableView reloadData];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)saveDataToDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel configDataWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+#pragma mark - 恢复出厂设置
+
+- (void)factoryReset {
+    NSString *msg = @"After factory reset,all the data will be reseted to the factory values.";
+    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Factory Reset"
+                                                                       message:msg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    alertView.notificationName = @"mk_mp_needDismissAlert";
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertView addAction:cancelAction];
+    @weakify(self);
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        [self sendResetCommandToDevice];
+    }];
+    [alertView addAction:moreAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+}
+
+- (void)sendResetCommandToDevice{
+    [[MKHudManager share] showHUDWithTitle:@"Setting..."
+                                     inView:self.view
+                              isPenetration:NO];
+    [MKMPInterface mp_factoryResetWithSucBlock:^{
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Factory reset successfully!Please reconnect the device."];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - loadSectionDatas
@@ -216,6 +299,13 @@ MKTextButtonCellDelegate>
         _headerList = [NSMutableArray array];
     }
     return _headerList;
+}
+
+- (MKMPDeviceSettingModel *)dataModel {
+    if (!_dataModel) {
+        _dataModel = [[MKMPDeviceSettingModel alloc] init];
+    }
+    return _dataModel;
 }
 
 - (NSArray *)timeZoneList {

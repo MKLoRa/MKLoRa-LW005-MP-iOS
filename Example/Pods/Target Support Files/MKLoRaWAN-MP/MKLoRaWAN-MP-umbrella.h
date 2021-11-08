@@ -51,6 +51,8 @@
 #import "MKMPSwitchSettingsController.h"
 #import "MKMPSwitchSettingsModel.h"
 #import "MKMPTabBarController.h"
+#import "MKMPUpdateController.h"
+#import "MKMPDFUModule.h"
 #import "CBPeripheral+MKMPAdd.h"
 #import "MKMPCentralManager.h"
 #import "MKMPInterface+MKMPConfig.h"

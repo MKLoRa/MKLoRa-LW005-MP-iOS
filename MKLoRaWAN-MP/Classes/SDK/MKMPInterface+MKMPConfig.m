@@ -652,6 +652,15 @@
                                 failedBlock:failedBlock];
 }
 
++ (void)mp_factoryResetWithSucBlock:(void (^)(void))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed016a00";
+    [self configDeviceControlDataWithTaskID:mk_mp_taskFactoryResetOperation
+                                       data:commandString
+                                   sucBlock:sucBlock
+                                failedBlock:failedBlock];
+}
+
 #pragma mark - private method
 + (void)configDataWithTaskID:(mk_mp_taskOperationID)taskID
                         data:(NSString *)data

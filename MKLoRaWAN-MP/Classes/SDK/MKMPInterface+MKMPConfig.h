@@ -377,6 +377,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)mp_restartDeviceWithSucBlock:(void (^)(void))sucBlock
                          failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Reset.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_factoryResetWithSucBlock:(void (^)(void))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

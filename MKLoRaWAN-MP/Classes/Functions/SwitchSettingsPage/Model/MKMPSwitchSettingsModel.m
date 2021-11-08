@@ -184,7 +184,7 @@
 
 - (dispatch_queue_t)readQueue {
     if (!_readQueue) {
-        _readQueue = dispatch_queue_create("OverProtectionQueue", DISPATCH_QUEUE_SERIAL);
+        _readQueue = dispatch_queue_create("SwitchSettingsQueue", DISPATCH_QUEUE_SERIAL);
     }
     return _readQueue;
 }

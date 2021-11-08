@@ -12,9 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKMPCountDownSettingsModel : NSObject
 
-@property (nonatomic, copy)NSString *countDownTime;
-
 @property (nonatomic, copy)NSString *reportInterval;
+
+- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
+- (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 
