@@ -126,17 +126,7 @@
     __block BOOL success = NO;
     [MKMPInterface mp_readRepoweredDefaultModeWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        NSInteger tempMode = [returnData[@"result"][@"mode"] integerValue];
-        if (tempMode == 0) {
-            //关闭
-            self.mode = 1;
-        }else if (tempMode == 1) {
-            //打开
-            self.mode = 0;
-        }else if (tempMode == 2) {
-            //断点之前的状态
-            self.mode = 2;
-        }
+        self.mode = [returnData[@"result"][@"mode"] integerValue];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

@@ -172,14 +172,14 @@
     
     MKMPBleSettingsController *bleSettingPage = [[MKMPBleSettingsController alloc] init];
     bleSettingPage.tabBarItem.title = @"BLUETOOTH";
-    bleSettingPage.tabBarItem.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_position_tabBarUnselected.png");
+    bleSettingPage.tabBarItem.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_bleSettings_tabBarUnselected.png");
     bleSettingPage.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_bleSettings_tabBarSelected.png");
     MKBaseNavigationController *bleNav = [[MKBaseNavigationController alloc] initWithRootViewController:bleSettingPage];
 
     
     MKMPDeviceSettingController *deviceInfo = [[MKMPDeviceSettingController alloc] init];
     deviceInfo.tabBarItem.title = @"DEVICE";
-    deviceInfo.tabBarItem.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_bleSettings_tabBarUnselected.png");
+    deviceInfo.tabBarItem.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_device_tabBarUnselected.png");
     deviceInfo.tabBarItem.selectedImage = LOADICON(@"MKLoRaWAN-MP", @"MKMPTabBarController", @"mp_device_tabBarSelected.png");
     MKBaseNavigationController *deviceInfoPage = [[MKBaseNavigationController alloc] initWithRootViewController:deviceInfo];
     

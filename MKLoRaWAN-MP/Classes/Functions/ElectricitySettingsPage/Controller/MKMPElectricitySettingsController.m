@@ -149,7 +149,7 @@ MKTextFieldCellDelegate>
 - (void)loadSection0Datas {
     MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
     cellModel1.index = 0;
-    cellModel1.msg = @"Repoert Interval";
+    cellModel1.msg = @"Report Interval";
     cellModel1.maxLength = 3;
     cellModel1.textPlaceholder = @"5 - 600";
     cellModel1.textFieldType = mk_realNumberOnly;

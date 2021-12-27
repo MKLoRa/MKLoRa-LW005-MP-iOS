@@ -20,6 +20,9 @@
 
 @property (nonatomic, strong)dispatch_semaphore_t semaphore;
 
+/// 设备连接的时候是否需要密码
+@property (nonatomic, assign)BOOL hasPassword;
+
 @end
 
 @implementation MKMPConnectModel
@@ -44,9 +47,11 @@
         if (ValidStr(password) && password.length == 8) {
             //有密码登录
             dic = [self connectDevice:peripheral password:password];
+            self.hasPassword = NO;
         }else {
             //免密登录
             dic = [self connectDevice:peripheral];
+            self.hasPassword = YES;
         }
          
         if (![dic[@"success"] boolValue]) {

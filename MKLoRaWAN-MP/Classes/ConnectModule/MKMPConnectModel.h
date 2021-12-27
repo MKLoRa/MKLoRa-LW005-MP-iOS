@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (MKMPConnectModel *)shared;
 
+/// 设备连接的时候是否需要密码
+@property (nonatomic, assign, readonly)BOOL hasPassword;
+
 /// 连接设备
 /// @param peripheral 设备
 /// @param password 密码

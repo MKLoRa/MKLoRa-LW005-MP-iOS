@@ -240,14 +240,14 @@ MKTextButtonCellDelegate>
     MKTextButtonCellModel *cellModel1 = [[MKTextButtonCellModel alloc] init];
     cellModel1.index = 0;
     cellModel1.msg = @"Power On Default Mode";
-    cellModel1.dataList = @[@"On",@"Off",@"Resore Last Mode"];
+    cellModel1.dataList = @[@"Off",@"On",@"Restore Last Mode"];
     cellModel1.dataListIndex = self.dataModel.mode;
     [self.section2List addObject:cellModel1];
 }
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.defaultTitle = @"Switch Settings";
+    self.defaultTitle = @"Switch Control";
     [self.rightButton setImage:LOADICON(@"MKLoRaWAN-MP", @"MKMPSwitchSettingsController", @"mp_slotSaveIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

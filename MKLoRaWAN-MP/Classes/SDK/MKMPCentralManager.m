@@ -87,7 +87,7 @@ static dispatch_once_t onceToken;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"%@",advertisementData);
         NSDictionary *dataModel = [self parseModelWithRssi:RSSI advDic:advertisementData peripheral:peripheral];
-        if (!dataModel) {
+        if (!MKValidDict(dataModel)) {
             return ;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -439,12 +439,14 @@ static dispatch_once_t onceToken;
     [tempMac substringWithRange:NSMakeRange(10, 2)]];
     
     NSString *voltage = [NSString stringWithFormat:@"%.1f",([MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(12, 4)] * 0.1)];
-    NSString *current = [NSString stringWithFormat:@"%.3f",([MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(16, 4)] * 0.001)];
-    NSString *power = [NSString stringWithFormat:@"%.1f",([MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(20, 8)] * 0.1)];
+    NSNumber *currentInt = [MKBLEBaseSDKAdopter signedHexTurnString:[content substringWithRange:NSMakeRange(16, 4)]];
+    NSString *current = [NSString stringWithFormat:@"%.3f",([currentInt integerValue] * 0.001)];
+    NSNumber *powerInt = [MKBLEBaseSDKAdopter signedHexTurnString:[content substringWithRange:NSMakeRange(20, 8)]];
+    NSString *power = [NSString stringWithFormat:@"%.1f",([powerInt integerValue] * 0.1)];
     
     NSString *powerFactor = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(28, 2)];
     
-    NSString *frequencyOfCurrent = [NSString stringWithFormat:@"%.3f",([MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(30, 4)] * 0.001)];
+    NSString *frequencyOfCurrent = [NSString stringWithFormat:@"%.1f",([MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(30, 4)] * 0.001)];
     
     NSString *energy = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(34, 8)];
     

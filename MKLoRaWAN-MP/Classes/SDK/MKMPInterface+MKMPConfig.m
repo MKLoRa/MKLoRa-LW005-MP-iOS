@@ -517,11 +517,11 @@
     if (productModel == mk_mp_productModel_America) {
         //美规
         minValue = 10;
-        maxValue = 2216;
+        maxValue = 2160;
     }else if (productModel == mk_mp_productModel_UK) {
         //英规
         minValue = 10;
-        maxValue = 3558;
+        maxValue = 3588;
     }
     if (overThreshold < minValue || overThreshold > maxValue || timeThreshold < 1 || timeThreshold > 30) {
         [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];

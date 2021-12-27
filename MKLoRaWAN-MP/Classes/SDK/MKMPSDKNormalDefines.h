@@ -45,8 +45,8 @@ typedef NS_ENUM(NSInteger, mk_mp_loraWanClassType) {
 };
 
 typedef NS_ENUM(NSInteger, mk_mp_repoweredDefaultMode) {
-    mk_mp_repoweredDefaultMode_onMode,              //On mode
     mk_mp_repoweredDefaultMode_offMode,             //Off mode
+    mk_mp_repoweredDefaultMode_onMode,              //On mode
     mk_mp_repoweredDefaultMode_revertToLastMode,    //Revert To Last Mode
 };
 

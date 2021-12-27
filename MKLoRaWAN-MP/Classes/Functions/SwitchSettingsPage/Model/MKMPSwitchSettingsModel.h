@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *interval;
 
-/// 0:On   1:Off    2:Resore Last Mode
+/// 0:Of   1:On    2:Resore Last Mode
 @property (nonatomic, assign)NSInteger mode;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;

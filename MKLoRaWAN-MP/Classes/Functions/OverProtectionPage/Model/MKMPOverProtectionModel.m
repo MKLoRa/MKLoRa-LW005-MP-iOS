@@ -262,11 +262,11 @@
         }else if (self.specification == 1) {
             //美规
             minValue = 10;
-            maxValue = 2216;
+            maxValue = 2160;
         }else if (self.specification == 2) {
             //英规
             minValue = 10;
-            maxValue = 3558;
+            maxValue = 3588;
         }
     }else if (self.type == mp_overProtectionType_voltage) {
         //过压

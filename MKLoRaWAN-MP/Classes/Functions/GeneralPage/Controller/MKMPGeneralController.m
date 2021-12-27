@@ -158,7 +158,7 @@
     
     MKNormalTextCellModel *cellModel6 = [[MKNormalTextCellModel alloc] init];
     cellModel6.showRightIcon = YES;
-    cellModel6.leftMsg = @"Countdown Setting";
+    cellModel6.leftMsg = @"Countdown Settings";
     [self.dataList addObject:cellModel6];
     
     MKNormalTextCellModel *cellModel7 = [[MKNormalTextCellModel alloc] init];

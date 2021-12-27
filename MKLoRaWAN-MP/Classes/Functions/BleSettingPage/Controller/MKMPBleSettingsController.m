@@ -25,6 +25,8 @@
 #import "MKTextSwitchCell.h"
 #import "MKAlertController.h"
 
+#import "MKMPConnectModel.h"
+
 #import "MKMPInterface+MKMPConfig.h"
 
 #import "MKMPBleTxPowerCell.h"
@@ -112,7 +114,10 @@ MKMPBleTxPowerCellDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2 && indexPath.row == 0) {
-        [self configPassword];
+        if ([MKMPConnectModel shared].hasPassword) {
+            //有登录密码进来的才能修改密码，无登录密码进来的点击修改密码不响应
+            [self configPassword];
+        }
         return;
     }
 }

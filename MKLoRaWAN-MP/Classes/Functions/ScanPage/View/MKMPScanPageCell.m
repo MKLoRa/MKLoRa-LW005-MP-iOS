@@ -255,11 +255,6 @@ static CGFloat const batteryIconHeight = 12.f;
     self.powerView.msgLabel.text = [_dataModel.power stringByAppendingString:@" W"];
     self.powerFactorView.msgLabel.text = [_dataModel.powerFactor stringByAppendingString:@" %"];
     self.frequencyOfCurrentView.msgLabel.text = [_dataModel.frequencyOfCurrent stringByAppendingString:@" HZ"];
-    if (!_dataModel.switchStatus) {
-        self.stateLabel.icon.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPScanPageCell", @"mp_scan_stateOffIcon.png");
-        self.stateLabel.msgLabel.text = @"OFF";
-        return;
-    }
     if (_dataModel.overLoad) {
         self.stateLabel.icon.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPScanPageCell", @"mp_scan_overStateIcon.png");
         self.stateLabel.msgLabel.text = @"OverLoad";
@@ -278,6 +273,11 @@ static CGFloat const batteryIconHeight = 12.f;
     if (_dataModel.underVoltage) {
         self.stateLabel.icon.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPScanPageCell", @"mp_scan_overStateIcon.png");
         self.stateLabel.msgLabel.text = @"SagVoltage";
+        return;
+    }
+    if (!_dataModel.switchStatus) {
+        self.stateLabel.icon.image = LOADICON(@"MKLoRaWAN-MP", @"MKMPScanPageCell", @"mp_scan_stateOffIcon.png");
+        self.stateLabel.msgLabel.text = @"OFF";
         return;
     }
     if (_dataModel.switchStatus) {
