@@ -224,7 +224,7 @@
 }
 
 - (BOOL)validParams {
-    if (!ValidStr(self.advName) || self.advName.length > 16) {
+    if (self.advName.length > 16) {
         return NO;
     }
     if (!ValidStr(self.advInterval) || [self.advInterval integerValue] < 1 || [self.advInterval integerValue] > 100) {

@@ -29,8 +29,6 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '12.0'
-
-  s.source_files = 'MKLoRaWAN-MP/Classes/**/*'
   
   s.resource_bundles = {
     'MKLoRaWAN-MP' => ['MKLoRaWAN-MP/Assets/*.png']
@@ -357,6 +355,7 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKLoRaWAN-MP/Classes/Functions/UpdatePage/Model/**'
       end
     
+      sss.dependency 'iOSDFULibrary'
     end
   
     ss.dependency 'MKLoRaWAN-MP/SDK'
@@ -368,7 +367,6 @@ TODO: Add long description of the pod here.
     ss.dependency 'MKCustomUIModule'
     ss.dependency 'HHTransition'
     ss.dependency 'MLInputDodger'
-    ss.dependency 'iOSDFULibrary'
   
   end
   

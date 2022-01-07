@@ -122,8 +122,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Configure LoRaWAN uplink data sending strategy.
 /// @param isOn ADR is on.
-/// @param DRL When the ADR switch is off, the range is 0~5.
-/// @param DRH When the ADR switch is off, the range is DRL~5
+/// @param DRL When the ADR switch is off, the range is 0~6.
+/// @param DRH When the ADR switch is off, the range is DRL~6
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
 + (void)mp_configUplinkStrategy:(BOOL)isOn
@@ -376,6 +376,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock Failure callback
 + (void)mp_restartDeviceWithSucBlock:(void (^)(void))sucBlock
                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Sync device time.
+/// @param timestamp UTC
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)mp_configDeviceTime:(unsigned long)timestamp
+                   sucBlock:(void (^)(void))sucBlock
+                failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Reset.
 /// @param sucBlock Success callback

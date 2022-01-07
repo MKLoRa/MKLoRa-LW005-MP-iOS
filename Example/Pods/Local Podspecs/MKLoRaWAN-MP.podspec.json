@@ -18,33 +18,9 @@
   "platforms": {
     "ios": "12.0"
   },
-  "source_files": "MKLoRaWAN-MP/Classes/**/*",
   "resource_bundles": {
     "MKLoRaWAN-MP": [
       "MKLoRaWAN-MP/Assets/*.png"
-    ]
-  },
-  "dependencies": {
-    "MKBaseModuleLibrary": [
-
-    ],
-    "MKCustomUIModule": [
-
-    ],
-    "MKBaseBleModule": [
-
-    ],
-    "HHTransition": [
-
-    ],
-    "MLInputDodger": [
-
-    ],
-    "iOSDFULibrary": [
-
-    ],
-    "CTMediator": [
-
     ]
   },
   "subspecs": [
@@ -141,9 +117,6 @@
 
         ],
         "MLInputDodger": [
-
-        ],
-        "iOSDFULibrary": [
 
         ]
       },
@@ -540,6 +513,11 @@
         },
         {
           "name": "UpdatePage",
+          "dependencies": {
+            "iOSDFULibrary": [
+
+            ]
+          },
           "subspecs": [
             {
               "name": "Controller",

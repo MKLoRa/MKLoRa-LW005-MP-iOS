@@ -194,7 +194,7 @@
                             DRH:(NSInteger)DRH
                        sucBlock:(void (^)(void))sucBlock
                     failedBlock:(void (^)(NSError *error))failedBlock {
-    if (!isOn && (DRL < 0 || DRL > 5 || DRH < DRL || DRH > 5)) {
+    if (!isOn && (DRL < 0 || DRL > 6 || DRH < DRL || DRH > 6)) {
         [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
         return;
     }
@@ -647,6 +647,17 @@
                          failedBlock:(void (^)(NSError *error))failedBlock {
     NSString *commandString = @"ed016600";
     [self configDeviceControlDataWithTaskID:mk_mp_taskRestartDeviceOperation
+                                       data:commandString
+                                   sucBlock:sucBlock
+                                failedBlock:failedBlock];
+}
+
++ (void)mp_configDeviceTime:(unsigned long)timestamp
+                   sucBlock:(void (^)(void))sucBlock
+                failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *value = [NSString stringWithFormat:@"%1lx",timestamp];
+    NSString *commandString = [@"ed016904" stringByAppendingString:value];
+    [self configDeviceControlDataWithTaskID:mk_mp_taskConfigDeviceTimeOperation
                                        data:commandString
                                    sucBlock:sucBlock
                                 failedBlock:failedBlock];

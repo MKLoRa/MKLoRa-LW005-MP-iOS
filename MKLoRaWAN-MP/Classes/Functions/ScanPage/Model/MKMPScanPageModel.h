@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign)NSInteger index;
 
-@property (nonatomic, strong)NSNumber *rssi;
+@property (nonatomic, assign)NSInteger rssi;
 
 @property (nonatomic, strong)CBPeripheral *peripheral;
 

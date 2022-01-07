@@ -562,6 +562,9 @@
     }else if ([cmd isEqualToString:@"66"]) {
         //配置LoRaWAN 入网
         operationID = mk_mp_taskRestartDeviceOperation;
+    }else if ([cmd isEqualToString:@"69"]) {
+        //同步时间
+        operationID = mk_mp_taskConfigDeviceTimeOperation;
     }else if ([cmd isEqualToString:@"6a"]) {
         //恢复出厂设置
         operationID = mk_mp_taskFactoryResetOperation;

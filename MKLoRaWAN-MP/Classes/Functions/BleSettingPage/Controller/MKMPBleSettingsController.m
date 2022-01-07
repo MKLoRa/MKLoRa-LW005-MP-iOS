@@ -389,7 +389,7 @@ MKMPBleTxPowerCellDelegate>
     cellModel1.index = 0;
     cellModel1.msg = @"ADV Name";
     cellModel1.maxLength = 16;
-    cellModel1.textPlaceholder = @"1 ~ 16Characters";
+    cellModel1.textPlaceholder = @"0 ~ 16Characters";
     cellModel1.textFieldType = mk_normal;
     [self.section0List addObject:cellModel1];
     

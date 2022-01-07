@@ -123,11 +123,11 @@
     __block BOOL success = NO;
     [MKMPInterface mp_readEnergyDataWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        NSInteger ec = [returnData[@"EC"] integerValue];
+        NSInteger ec = [returnData[@"result"][@"EC"] integerValue];
         if (ec == 0) {
             self.totalEnergy = @"0.0";
         }else {
-            NSInteger totalValueRounds = [returnData[@"totalRounds"] integerValue];
+            NSInteger totalValueRounds = [returnData[@"result"][@"totalRounds"] integerValue];
             float  value = (totalValueRounds * 1.0) / ec;
             self.totalEnergy = [NSString stringWithFormat:@"%.1f",value];
         }

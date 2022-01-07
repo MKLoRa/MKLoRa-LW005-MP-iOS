@@ -47,11 +47,11 @@
         if (ValidStr(password) && password.length == 8) {
             //有密码登录
             dic = [self connectDevice:peripheral password:password];
-            self.hasPassword = NO;
+            self.hasPassword = YES;
         }else {
             //免密登录
             dic = [self connectDevice:peripheral];
-            self.hasPassword = YES;
+            self.hasPassword = NO;
         }
          
         if (![dic[@"success"] boolValue]) {
@@ -108,17 +108,16 @@
 }
 
 - (BOOL)configDate {
-//    __block BOOL success = NO;
-//    long long recordTime = [[NSDate date] timeIntervalSince1970];
-//    [MKMPInterface bg_configDeviceTime:recordTime sucBlock:^{
-//        success = YES;
-//        dispatch_semaphore_signal(self.semaphore);
-//    } failedBlock:^(NSError * _Nonnull error) {
-//        dispatch_semaphore_signal(self.semaphore);
-//    }];
-//    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-//    return success;
-    return YES;
+    __block BOOL success = NO;
+    long long recordTime = [[NSDate date] timeIntervalSince1970];
+    [MKMPInterface mp_configDeviceTime:recordTime sucBlock:^{
+        success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
 }
 
 #pragma mark - private method

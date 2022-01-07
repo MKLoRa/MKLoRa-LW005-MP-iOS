@@ -16,6 +16,7 @@
 
 #import "MKHudManager.h"
 #import "MKNormalTextCell.h"
+#import "MKAlertController.h"
 
 #import "MKTableSectionLineHeader.h"
 
@@ -139,8 +140,23 @@ MKMPTextButtonCellDelegate>
 - (void)mp_textButtonCell_buttonAction:(NSInteger)index {
     if (index == 0) {
         //DFU
-        MKMPUpdateController *vc = [[MKMPUpdateController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        
+        NSString *msg = @"Please disconnect the load device before DFU, otherwise there may be security risks.";
+        MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@""
+                                                                           message:msg
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+        alertView.notificationName = @"mk_mp_needDismissAlert";
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        [alertView addAction:cancelAction];
+        @weakify(self);
+        UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            @strongify(self);
+            MKMPUpdateController *vc = [[MKMPUpdateController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        [alertView addAction:moreAction];
+        
+        [self presentViewController:alertView animated:YES completion:nil];
         return;
     }
 }

@@ -242,7 +242,7 @@ static CGFloat const batteryIconHeight = 12.f;
         return;
     }
     //顶部
-    self.rssiLabel.text = [NSString stringWithFormat:@"%lddBm",(long)[_dataModel.rssi integerValue]];
+    self.rssiLabel.text = [NSString stringWithFormat:@"%lddBm",(long)_dataModel.rssi];
     self.deviceNameLabel.text = (ValidStr(_dataModel.deviceName) ? _dataModel.deviceName : @"N/A");
     self.macLabel.text = [@"MAC: " stringByAppendingString:(ValidStr(_dataModel.macAddress) ? _dataModel.macAddress : @"N/A")];
     self.timeLabel.text = _dataModel.scanTime;

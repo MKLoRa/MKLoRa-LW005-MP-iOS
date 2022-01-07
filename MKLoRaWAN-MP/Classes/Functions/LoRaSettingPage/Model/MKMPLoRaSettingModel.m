@@ -248,7 +248,7 @@
     self.dutyIsOn = NO;
     
     self.adrIsOn = YES;
-    self.retransmission = 0;
+//    self.retransmission = 0;
     if (self.region == 0 || self.region == 1) {
         //AS923、AU915
         self.join = 2;
@@ -284,9 +284,13 @@
 }
 
 - (NSArray <NSString *>*)DRValueList; {
-    if (self.region == 0 || self.region == 1) {
+    if (self.region == 0) {
         //AS923、AU915
         return @[@"2",@"3",@"4",@"5"];
+    }
+    if (self.region == 1) {
+        //AU915
+        return @[@"2",@"3",@"4",@"5",@"6"];
     }
     if (self.region == 8) {
         //US915
@@ -774,7 +778,7 @@
         if (self.retransmission < 0 && self.retransmission > 7) {
             return NO;
         }
-        if (self.DRL < 0 || self.DRL > 5 || self.DRH < self.DRL || self.DRH > 5) {
+        if (self.DRL < 0 || self.DRL > 6 || self.DRH < self.DRL || self.DRH > 6) {
             return NO;
         }
     }
