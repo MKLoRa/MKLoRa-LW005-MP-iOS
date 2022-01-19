@@ -37,10 +37,10 @@ extern NSString *const mk_mp_deviceDisconnectTypeNotification;
 
 + (MKMPCentralManager *)shared;
 
-/// Destroy the MKLoRaTHCentralManager singleton and the MKBLEBaseCentralManager singleton. After the dfu upgrade, you need to destroy these two and then reinitialize.
+/// Destroy the MKMPCentralManager singleton and the MKBLEBaseCentralManager singleton. After the dfu upgrade, you need to destroy these two and then reinitialize.
 + (void)sharedDealloc;
 
-/// Destroy the MKLoRaTHCentralManager singleton and remove the manager list of MKBLEBaseCentralManager.
+/// Destroy the MKMPCentralManager singleton and remove the manager list of MKBLEBaseCentralManager.
 + (void)removeFromCentralList;
 
 - (nonnull CBCentralManager *)centralManager;
