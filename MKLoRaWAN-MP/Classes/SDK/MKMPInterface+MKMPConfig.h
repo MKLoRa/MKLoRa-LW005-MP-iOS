@@ -136,7 +136,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param times 1~8
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
-+ (void)mk_configLorawanMaxRetransmissionTimes:(NSInteger)times
++ (void)mp_configLorawanMaxRetransmissionTimes:(NSInteger)times
                                       sucBlock:(void (^)(void))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock;
 

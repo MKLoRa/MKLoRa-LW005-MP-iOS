@@ -70,6 +70,7 @@
         //Application Settings
         MKMPLoRaAppSettingController *vc = [[MKMPLoRaAppSettingController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+        return;
     }
 }
 

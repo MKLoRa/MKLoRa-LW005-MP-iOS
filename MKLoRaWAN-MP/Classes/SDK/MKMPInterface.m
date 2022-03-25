@@ -47,7 +47,7 @@
 + (void)mp_readSoftwareWithSucBlock:(void (^)(id returnData))sucBlock
                         failedBlock:(void (^)(NSError *error))failedBlock {
     [centralManager addReadTaskWithTaskID:mk_mp_taskReadSoftwareOperation
-                           characteristic:peripheral.mp_sofeware
+                           characteristic:peripheral.mp_software
                              successBlock:sucBlock
                              failureBlock:failedBlock];
 }

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly)CBCharacteristic *mp_hardware;
 
 /// R
-@property (nonatomic, strong, readonly)CBCharacteristic *mp_sofeware;
+@property (nonatomic, strong, readonly)CBCharacteristic *mp_software;
 
 /// R
 @property (nonatomic, strong, readonly)CBCharacteristic *mp_firmware;

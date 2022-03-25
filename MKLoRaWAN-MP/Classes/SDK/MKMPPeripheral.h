@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class CBPeripheral;
-@interface MKMPPeripheral : NSOperation<MKBLEBasePeripheralProtocol>
+@interface MKMPPeripheral : NSObject<MKBLEBasePeripheralProtocol>
 
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral;
 

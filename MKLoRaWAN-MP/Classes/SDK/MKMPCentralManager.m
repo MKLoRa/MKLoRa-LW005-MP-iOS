@@ -26,17 +26,17 @@ NSString *const mk_mp_deviceDisconnectTypeNotification = @"mk_mp_deviceDisconnec
 static MKMPCentralManager *manager = nil;
 static dispatch_once_t onceToken;
 
-@interface NSObject (MKMPCentralManager)
-
-@end
-
-@implementation NSObject (MKMPCentralManager)
-
-+ (void)load{
-    [MKMPCentralManager shared];
-}
-
-@end
+//@interface NSObject (MKMPCentralManager)
+//
+//@end
+//
+//@implementation NSObject (MKMPCentralManager)
+//
+//+ (void)load{
+//    [MKMPCentralManager shared];
+//}
+//
+//@end
 
 @interface MKMPCentralManager ()
 

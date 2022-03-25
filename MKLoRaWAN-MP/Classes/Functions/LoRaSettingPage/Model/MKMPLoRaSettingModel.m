@@ -695,7 +695,7 @@
 
 - (BOOL)configRetransmission {
     __block BOOL success = NO;
-    [MKMPInterface mk_configLorawanMaxRetransmissionTimes:(self.retransmission + 1) sucBlock:^{
+    [MKMPInterface mp_configLorawanMaxRetransmissionTimes:(self.retransmission + 1) sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

@@ -88,7 +88,7 @@ static const char *mp_deviceControlNotifySuccessKey = "mp_deviceControlNotifySuc
     if (![objc_getAssociatedObject(self, &mp_customNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &mp_passwordNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &mp_disconnectTypeNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &mp_deviceControlNotifySuccessKey) boolValue]) {
         return NO;
     }
-    if (!self.mp_manufacturer || !self.mp_deviceModel || !self.mp_hardware || !self.mp_sofeware || !self.mp_firmware) {
+    if (!self.mp_manufacturer || !self.mp_deviceModel || !self.mp_hardware || !self.mp_software || !self.mp_firmware) {
         return NO;
     }
     if (!self.mp_password || !self.mp_disconnectType || !self.mp_custom || !self.mp_deviceControl) {
@@ -129,7 +129,7 @@ static const char *mp_deviceControlNotifySuccessKey = "mp_deviceControlNotifySuc
     return objc_getAssociatedObject(self, &mp_hardwareKey);
 }
 
-- (CBCharacteristic *)mp_sofeware {
+- (CBCharacteristic *)mp_software {
     return objc_getAssociatedObject(self, &mp_softwareKey);
 }
 

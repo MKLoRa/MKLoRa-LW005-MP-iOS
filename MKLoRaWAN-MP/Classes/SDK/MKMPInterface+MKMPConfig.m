@@ -208,7 +208,7 @@
                    failedBlock:failedBlock];
 }
 
-+ (void)mk_configLorawanMaxRetransmissionTimes:(NSInteger)times
++ (void)mp_configLorawanMaxRetransmissionTimes:(NSInteger)times
                                       sucBlock:(void (^)(void))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock {
     if (times < 1 || times > 8) {
