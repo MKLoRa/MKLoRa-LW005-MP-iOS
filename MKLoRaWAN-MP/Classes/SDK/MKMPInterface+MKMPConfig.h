@@ -293,7 +293,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// Configure device overload protection information.
 /// @param isOn Open function
 /// @param productModel Specification and model of the equipment
-/// @param overThreshold Overload protection value, Europe and France: 10~4416W, U.K: 10~3558W, America: 10~2216W.
+/// @param overThreshold Overload protection value, Europe and France: 10~4416W, U.K: 10~3558W, America: 10~2160W.
 /// @param timeThreshold 1s~30s
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
