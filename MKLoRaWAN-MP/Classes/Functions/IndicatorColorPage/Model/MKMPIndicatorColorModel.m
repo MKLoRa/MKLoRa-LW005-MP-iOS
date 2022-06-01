@@ -116,6 +116,32 @@
 }
 
 - (BOOL)validParams {
+    if (self.colorType == mk_mp_ledColorTransitionSmoothly || self.colorType == mk_mp_ledColorTransitionDirectly) {
+        NSInteger maxValue = 4416;
+        if (self.productModel == mk_mp_productModel_America) {
+            maxValue = 2160;
+        }else if (self.productModel == mk_mp_productModel_UK) {
+            maxValue = 3588;
+        }
+        if (self.b_color < 1 || self.b_color > (maxValue - 5)) {
+            return NO;
+        }
+        if (self.g_color <= self.b_color || self.g_color > (maxValue - 4)) {
+            return NO;
+        }
+        if (self.y_color <= self.g_color || self.y_color > (maxValue - 3)) {
+            return NO;
+        }
+        if (self.o_color <= self.y_color || self.o_color > (maxValue - 2)) {
+            return NO;
+        }
+        if (self.r_color <= self.o_color || self.r_color > (maxValue - 1)) {
+            return NO;
+        }
+        if (self.p_color <= self.r_color || self.p_color > maxValue) {
+            return NO;
+        }
+    }
     return YES;
 }
 
