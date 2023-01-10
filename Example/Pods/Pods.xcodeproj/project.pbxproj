@@ -592,7 +592,7 @@
 		EF19C9CA84DACE3F32EA168F4485DD64 /* MKMPTextButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEE51B3696488ED46E28C52BEA97482 /* MKMPTextButtonCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EF632DD62D357DB42934B54ADFF0B8D7 /* MKSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CADC6EF232F7CAFB5362D6D98EBC40A1 /* MKSlider.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F0AD0E9222DC4A06FFC0B07737CE2FEA /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 68311D5DF84F5ED192D20D073E957B9C /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1DB2A4B7C81547FAAC5C880700333FA /* MKLoRaWAN-MP-MKLoRaWAN-MP in Resources */ = {isa = PBXBuildFile; fileRef = AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP-MKLoRaWAN-MP */; };
+		F1DB2A4B7C81547FAAC5C880700333FA /* MKLoRaWAN-MP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP.bundle */; };
 		F2BFF666BBE7C14B9A94CC0BD9981C73 /* MKFilterRawAdvDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 480AD428C58E4681CD472A9361DEA756 /* MKFilterRawAdvDataCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F2E6AA07FF6168F662EEAC9461CE9390 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = F1606D300339F8FFC047CDDA7C3C84DD /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2FA0126BC414579C7E162DB3DE6FDE3 /* CTMediator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E06BE1B6B6225FC17F7E4CAC180C7D /* CTMediator-dummy.m */; };
@@ -959,7 +959,7 @@
 		2164B60070802773A2CC39EA792B4A52 /* CircleProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleProgressBar-prefix.pch"; sourceTree = "<group>"; };
 		21854584966C1F740266DB1FBA08C7E8 /* MJRefreshConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConfig.h; path = MJRefresh/MJRefreshConfig.h; sourceTree = "<group>"; };
 		21A00E981ABF86C5CFFACE19A5263D5B /* mp_bleSettings_tabBarUnselected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_bleSettings_tabBarUnselected@3x.png"; path = "MKLoRaWAN-MP/Assets/mp_bleSettings_tabBarUnselected@3x.png"; sourceTree = "<group>"; };
-		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDFULibrary; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		223EB97BE4DA478EA361CA2AAB075E67 /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
 		22801C4EFA4CB47E89AD359B964C873B /* mp_scan_stateOffIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_scan_stateOffIcon@3x.png"; path = "MKLoRaWAN-MP/Assets/mp_scan_stateOffIcon@3x.png"; sourceTree = "<group>"; };
 		22C116C587F5EEAAEC474D6B2EBBCFDE /* MKLoRaWAN-MP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKLoRaWAN-MP-prefix.pch"; sourceTree = "<group>"; };
@@ -1033,7 +1033,7 @@
 		39F9943A0BD02ECA033B05BE314DD139 /* mp_lora_tabBarUnselected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_lora_tabBarUnselected@2x.png"; path = "MKLoRaWAN-MP/Assets/mp_lora_tabBarUnselected@2x.png"; sourceTree = "<group>"; };
 		3A3F4F5F7B43E9664926D498625C4264 /* MKMixedChoiceCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMixedChoiceCell.h; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKMixedChoiceCell/MKMixedChoiceCell.h; sourceTree = "<group>"; };
 		3A95407E5192D637B587B4AEF9E6BC70 /* MKMPOverProtectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPOverProtectionModel.h; path = "MKLoRaWAN-MP/Classes/Functions/OverProtectionPage/Model/MKMPOverProtectionModel.h"; sourceTree = "<group>"; };
-		3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods-MKLoRaWAN-MP_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MKLoRaWAN-MP_Example"; path = Pods_MKLoRaWAN_MP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods_MKLoRaWAN_MP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKLoRaWAN_MP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE4CAC6D9756551436A4519572E7CCF /* mp_scan_voltageIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_scan_voltageIcon@2x.png"; path = "MKLoRaWAN-MP/Assets/mp_scan_voltageIcon@2x.png"; sourceTree = "<group>"; };
 		3B1890AF10D79DE89AC3A36251602F8A /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		3BF1A7AE91124B1BE65DDED069787166 /* HHInteractionFlipTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHInteractionFlipTransition.m; path = HHTransition/HHInteractionFlipTransition.m; sourceTree = "<group>"; };
@@ -1070,7 +1070,7 @@
 		4734ECFBEF173E9024CB23BD5A66CD39 /* MKBLEBaseSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKBLEBaseSDK.h; path = MKBaseBleModule/Classes/MKBLEBaseSDK.h; sourceTree = "<group>"; };
 		47396A5D30914240ABC9BA629E83206C /* HHTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HHTransition-dummy.m"; sourceTree = "<group>"; };
 		480AD428C58E4681CD472A9361DEA756 /* MKFilterRawAdvDataCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKFilterRawAdvDataCell.m; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKFilterRawAdvDataCell/MKFilterRawAdvDataCell.m; sourceTree = "<group>"; };
-		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D64F23970ABCEF8E90426D230B707A /* DFUExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUExecutor.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUExecutor.swift; sourceTree = "<group>"; };
 		48E8FBF04AD71D9AB891BFDD862D815F /* MKClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKClassInfo.m; path = MKBaseModuleLibrary/Classes/Tools/MKClassInfo/MKClassInfo.m; sourceTree = "<group>"; };
 		491C586C3238595F42B458092983467C /* MKAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKAlertController.h; path = MKCustomUIModule/Classes/Controller/MKAlertController/MKAlertController.h; sourceTree = "<group>"; };
@@ -1236,7 +1236,7 @@
 		823814F9D156A6318398D6066A52D16A /* CTMediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CTMediator.release.xcconfig; sourceTree = "<group>"; };
 		8288F2937B876D6E91829FD2F6D6FEED /* mk_customUI_telIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_telIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_telIcon@2x.png"; sourceTree = "<group>"; };
 		82A49F894AD540BBA5D3D9A3EEDE8C26 /* HHInteractionDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHInteractionDelegate.m; path = HHTransition/HHInteractionDelegate.m; sourceTree = "<group>"; };
-		832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN-MP */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "MKLoRaWAN-MP"; path = MKLoRaWAN_MP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN_MP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKLoRaWAN_MP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C150BD39CFB6B05BCDB6E62CE1F0AF /* navigation_back_button_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "navigation_back_button_white@2x.png"; path = "MKBaseModuleLibrary/Assets/navigation_back_button_white@2x.png"; sourceTree = "<group>"; };
 		858518323A74086C12B8EE7203D33E8D /* MKTextSwitchCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTextSwitchCell.m; path = MKCustomUIModule/Classes/Cell/NormalCell/MKTextSwitchCell/MKTextSwitchCell.m; sourceTree = "<group>"; };
 		85A4174BD24C8ECE671811D82FEB38EF /* HHInteractionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHInteractionDelegate.h; path = HHTransition/HHInteractionDelegate.h; sourceTree = "<group>"; };
@@ -1300,7 +1300,7 @@
 		9C9C4203D74E56ABB42B9F4E9BEC0A29 /* DFUStreamHex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamHex.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamHex.swift; sourceTree = "<group>"; };
 		9CEFFF9C15019785060C60D11E2D5614 /* MKAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKAlertView.m; path = MKCustomUIModule/Classes/View/MKAlertView/MKAlertView.m; sourceTree = "<group>"; };
 		9D279BFF21F7D76280D2C4F98A8BFB16 /* UITextField+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+MKAdd.m"; path = "MKBaseModuleLibrary/Classes/Category/UITextField+MKAdd.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB0923D2982D4678C1CEC06E8871E33 /* mp_scan_currentIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_scan_currentIcon@3x.png"; path = "MKLoRaWAN-MP/Assets/mp_scan_currentIcon@3x.png"; sourceTree = "<group>"; };
 		9DEF6CF5A90377F5B0B7A2E37644ACAB /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
 		9E00E75C5D2CF4FD9B7007EEEDBD40B8 /* MLInputDodgerRetractView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLInputDodgerRetractView.m; path = Classes/MLInputDodgerRetractView.m; sourceTree = "<group>"; };
@@ -1350,7 +1350,7 @@
 		AD949003DF1F9CC350D4E38713BF10A9 /* MKMPDeviceSettingController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPDeviceSettingController.h; path = "MKLoRaWAN-MP/Classes/Functions/DeviceSettingPage/Controller/MKMPDeviceSettingController.h"; sourceTree = "<group>"; };
 		ADF5D91DED3D0FE23146A0F08421C717 /* mp_scan_stateOnIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mp_scan_stateOnIcon@3x.png"; path = "MKLoRaWAN-MP/Assets/mp_scan_stateOnIcon@3x.png"; sourceTree = "<group>"; };
 		AE55F619601D587EE5900BE0638EAA80 /* MKMPAboutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPAboutController.h; path = "MKLoRaWAN-MP/Classes/Functions/AboutPage/Controller/MKMPAboutController.h"; sourceTree = "<group>"; };
-		AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP-MKLoRaWAN-MP */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "MKLoRaWAN-MP-MKLoRaWAN-MP"; path = "MKLoRaWAN-MP.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MKLoRaWAN-MP.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC782BC4983FF203E64A3705DD57644 /* MKMPTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPTabBarController.h; path = "MKLoRaWAN-MP/Classes/Functions/TabBarPage/Controller/MKMPTabBarController.h"; sourceTree = "<group>"; };
 		AF25AB73E7DF0018AA2E56A3DEC5F3BE /* CTMediator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CTMediator.modulemap; sourceTree = "<group>"; };
 		AF8372626BACAA31B973767596955C6B /* mk_customUI_config_certAddIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_config_certAddIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_config_certAddIcon@3x.png"; sourceTree = "<group>"; };
@@ -1358,7 +1358,7 @@
 		AFDEAB309C539611C9D784F0FA392E89 /* MKMPLoRaSettingModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPLoRaSettingModel.h; path = "MKLoRaWAN-MP/Classes/Functions/LoRaSettingPage/Model/MKMPLoRaSettingModel.h"; sourceTree = "<group>"; };
 		B00FE4FCA019A9CF31CAAB2F9767F0C1 /* NSObject+MKModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MKModel.h"; path = "MKBaseModuleLibrary/Classes/Category/NSObject+MKModel.h"; sourceTree = "<group>"; };
 		B02E5EEA2FA8323C3168298660EE737E /* mk_customUI_config_certAddIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_config_certAddIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_config_certAddIcon@2x.png"; sourceTree = "<group>"; };
-		B043A00D48002B7B1DC1565A68E57C81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B043A00D48002B7B1DC1565A68E57C81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B05FFE52B204328414197FCA23BBB6AB /* MLInputDodger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLInputDodger-dummy.m"; sourceTree = "<group>"; };
 		B085BACBFC0CB81A2D580CFBFC14D1A0 /* MKBaseBleModule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKBaseBleModule-umbrella.h"; sourceTree = "<group>"; };
 		B1530D18FDA1ED2E33B144BFFED07049 /* NSDictionary+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MKAdd.h"; path = "MKBaseModuleLibrary/Classes/Category/NSDictionary+MKAdd.h"; sourceTree = "<group>"; };
@@ -1468,7 +1468,7 @@
 		D7B27952067B7B00BDAED4E45C9007A8 /* HHInteractionMotionTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHInteractionMotionTransition.h; path = HHTransition/HHInteractionMotionTransition.h; sourceTree = "<group>"; };
 		D83ACD928DC65E7813FD99D2FF0B5A16 /* UIScrollView+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MKAdd.h"; path = "MKBaseModuleLibrary/Classes/Category/UIScrollView+MKAdd.h"; sourceTree = "<group>"; };
 		D83D98AB7704ECA55A415679E9892EE7 /* LegacyDFUPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUPeripheral.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Peripherals/LegacyDFUPeripheral.swift; sourceTree = "<group>"; };
-		D84FA330260F41D510A45404CB975E6E /* MKLoRaWAN-MP.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "MKLoRaWAN-MP.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D84FA330260F41D510A45404CB975E6E /* MKLoRaWAN-MP.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "MKLoRaWAN-MP.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D87E92F30333FAE848322A4D3A493360 /* MJRefreshNormalTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.m; sourceTree = "<group>"; };
 		D9020DEBD92C55B6C30BD9943499880B /* MKCAFileSelectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKCAFileSelectController.m; path = MKCustomUIModule/Classes/Controller/CASelectPage/Controller/MKCAFileSelectController.m; sourceTree = "<group>"; };
 		DA38CDD912C739FA2350B3EC0A13A878 /* UIView+HHTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+HHTransition.h"; path = "HHTransition/UIView+HHTransition.h"; sourceTree = "<group>"; };
@@ -1524,7 +1524,7 @@
 		E99B9AE752392B236A8081B3758FB0CC /* MKMeasureTxPowerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMeasureTxPowerCell.h; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKMeasureTxPowerCell/MKMeasureTxPowerCell.h; sourceTree = "<group>"; };
 		EA2F4D2AAF879B72BAF447E1397A63EE /* MKMPCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPCentralManager.h; path = "MKLoRaWAN-MP/Classes/SDK/MKMPCentralManager.h"; sourceTree = "<group>"; };
 		EA484265B3E537173888ECB35A6420FD /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
-		ED4F2F0D697A674181223612ABB61D49 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		ED4F2F0D697A674181223612ABB61D49 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ED62CF10B5E43F2967B05672F025ED12 /* Toast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-umbrella.h"; sourceTree = "<group>"; };
 		ED9C05D7F9D0424CD175FED36909A32B /* MKMPSwitchSettingsController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKMPSwitchSettingsController.h; path = "MKLoRaWAN-MP/Classes/Functions/SwitchSettingsPage/Controller/MKMPSwitchSettingsController.h"; sourceTree = "<group>"; };
 		ED9F38F4389480F8D356B9A6D0BD6FF5 /* HHInteractionTopBackTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHInteractionTopBackTransition.m; path = HHTransition/HHInteractionTopBackTransition.m; sourceTree = "<group>"; };
@@ -1827,7 +1827,6 @@
 				496BA381D1D616F3F345E5D7BA693EF4 /* CircleProgressBar.m */,
 				6F809E78A90F853DA52695ADD94B3E11 /* Support Files */,
 			);
-			name = CircleProgressBar;
 			path = CircleProgressBar;
 			sourceTree = "<group>";
 		};
@@ -1890,7 +1889,6 @@
 				B3F893F5DF490D8C6A1F354CE9C4D542 /* ZipArchive.swift */,
 				F0785DDCE827348196CDFB45DF717A0E /* Support Files */,
 			);
-			name = iOSDFULibrary;
 			path = iOSDFULibrary;
 			sourceTree = "<group>";
 		};
@@ -2004,7 +2002,6 @@
 				EA5E87868C4431F7ACE98E9E109ED39A /* Resources */,
 				9E6BB8718A5A418BC22A3E87EC05773B /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -2297,7 +2294,6 @@
 				A40515F4DBAD4698E52228826A6A3621 /* UIViewController+HHTransitionProperty.m */,
 				32AB2E8143E977715EBF1F77F5CBA25C /* Support Files */,
 			);
-			name = HHTransition;
 			path = HHTransition;
 			sourceTree = "<group>";
 		};
@@ -2412,7 +2408,6 @@
 				942E7474815472DE86FC491B507951CF /* CTMediator+HandyTools.m */,
 				8009D3AF89844C71B40CFF418405C051 /* Support Files */,
 			);
-			name = CTMediator;
 			path = CTMediator;
 			sourceTree = "<group>";
 		};
@@ -2589,7 +2584,6 @@
 				F09FD6727E23406C4A3B5C530D145E0A /* UIAdopter */,
 				1F2BF024E050EC77FE2ED09B9D92F4A6 /* View */,
 			);
-			name = MKCustomUIModule;
 			path = MKCustomUIModule;
 			sourceTree = "<group>";
 		};
@@ -2726,7 +2720,6 @@
 				8185D6345C0DBE997D7B30A73BB41301 /* Support Files */,
 				5C667BF130D35B58041CC06290948596 /* Tools */,
 			);
-			name = MKBaseModuleLibrary;
 			path = MKBaseModuleLibrary;
 			sourceTree = "<group>";
 		};
@@ -3074,7 +3067,6 @@
 				356D7BA8A70ECC8BFF050BE4D2E928E1 /* WRNavigationBar.m */,
 				C0182BF77F79AA00DA21C132ABCEE275 /* Support Files */,
 			);
-			name = WRNavigationBar;
 			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
@@ -3135,7 +3127,6 @@
 				A28B1CAC24DE044A01FF613BE05E9A1D /* ViewController+MASAdditions.m */,
 				026088725141FC74499AE88350BF2F7C /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -3198,7 +3189,6 @@
 				653873554A707567D3FD886D6A94DB4A /* MKBLEBaseSDKDefines.h */,
 				06ACD2FC95BFA166BAF7EB2B5FA64308 /* Support Files */,
 			);
-			name = MKBaseBleModule;
 			path = MKBaseBleModule;
 			sourceTree = "<group>";
 		};
@@ -3216,7 +3206,6 @@
 				56DDF5D71FEF253870102F71E05719C9 /* Resources */,
 				F4D265B5B241E97796DB369A6594B38F /* Support Files */,
 			);
-			name = MLInputDodger;
 			path = MLInputDodger;
 			sourceTree = "<group>";
 		};
@@ -3598,7 +3587,6 @@
 				C1AEB2E320D8C55AA43139F4CB903FA8 /* UIView+Toast.m */,
 				626DB4708FB1B332477D2AE4790610C9 /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -3624,7 +3612,6 @@
 				E68F383845D23CD91CE0D949569CA378 /* FileManager+ZIP.swift */,
 				283312B131BCC21202C3131EFEC24EAA /* Support Files */,
 			);
-			name = ZIPFoundation;
 			path = ZIPFoundation;
 			sourceTree = "<group>";
 		};
@@ -3707,7 +3694,6 @@
 				EDC75C6593BCCFAF74B3ECC1DCBEB62B /* MBProgressHUD.m */,
 				1A6E7F40E00F4C570F22F34A7ACC9599 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -3865,7 +3851,7 @@
 				7948FA343D314AE2DEBBA7CA6076F151 /* CircleProgressBar */,
 				68FD71EBA2CC98523D3AACCE8A0D43C8 /* CTMediator */,
 				3341AA51FE8AF36DF37590425D188F14 /* HHTransition */,
-				21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary */,
+				21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */,
 				1FFED36A657123030ABB700256D73F15 /* Masonry */,
 				8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD */,
 				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */,
@@ -3874,13 +3860,13 @@
 				05CCF915CDB5CA9948F0AA95329FEBDB /* MKBaseModuleLibrary-MKBaseModuleLibrary */,
 				795D65D255D403824054D0CBE90E32B9 /* MKCustomUIModule */,
 				D299E571E016B9E6B94A53EE5C782D2B /* MKCustomUIModule-MKCustomUIModule */,
-				832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN-MP */,
-				AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP-MKLoRaWAN-MP */,
+				832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN_MP.framework */,
+				AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP.bundle */,
 				C291AC0DBEA2986CD250F2466A26691D /* MLInputDodger */,
-				3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods-MKLoRaWAN-MP_Example */,
+				3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods_MKLoRaWAN_MP_Example.framework */,
 				55E0AFD333353D71ACC2207149E879D6 /* Toast */,
 				DF1910F703AB9A9A05DDD9333F8D0EF9 /* WRNavigationBar */,
-				48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation */,
+				48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -4254,7 +4240,7 @@
 			);
 			name = "MKLoRaWAN-MP-MKLoRaWAN-MP";
 			productName = "MKLoRaWAN-MP";
-			productReference = AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP-MKLoRaWAN-MP */;
+			productReference = AE8BD5F7A415BF4BB8EBFAA941C19B6C /* MKLoRaWAN-MP.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		197AACDD87F3FB803BC9A523E89E78FB /* MKBaseBleModule */ = {
@@ -4298,7 +4284,7 @@
 			);
 			name = "MKLoRaWAN-MP";
 			productName = MKLoRaWAN_MP;
-			productReference = 832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN-MP */;
+			productReference = 832C96F3C0438BF1289F1383FA9B20EE /* MKLoRaWAN_MP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4323D5BE4E7DA0BD95DF856498CA4D3E /* HHTransition */ = {
@@ -4403,7 +4389,7 @@
 			);
 			name = "Pods-MKLoRaWAN-MP_Example";
 			productName = Pods_MKLoRaWAN_MP_Example;
-			productReference = 3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods-MKLoRaWAN-MP_Example */;
+			productReference = 3ABEC5CB1CA72F65B170F2BE4FC5CDD0 /* Pods_MKLoRaWAN_MP_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		75D8AD902ED19BD920F23DEC7F7B95F8 /* WRNavigationBar */ = {
@@ -4475,7 +4461,7 @@
 			);
 			name = iOSDFULibrary;
 			productName = iOSDFULibrary;
-			productReference = 21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary */;
+			productReference = 21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9CC6445F99B0695348CB65DA67F896ED /* MKCustomUIModule */ = {
@@ -4535,7 +4521,7 @@
 			);
 			name = ZIPFoundation;
 			productName = ZIPFoundation;
-			productReference = 48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation */;
+			productReference = 48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B3C3E0CD2EEF525F0504539EBBCA7200 /* MLInputDodger */ = {
@@ -4725,7 +4711,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DB2A4B7C81547FAAC5C880700333FA /* MKLoRaWAN-MP-MKLoRaWAN-MP in Resources */,
+				F1DB2A4B7C81547FAAC5C880700333FA /* MKLoRaWAN-MP.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6205,8 +6191,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
