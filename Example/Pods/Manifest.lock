@@ -4,47 +4,53 @@ PODS:
   - HHTransition (3.0.2)
   - iOSDFULibrary (4.13.0):
     - ZIPFoundation (= 0.9.11)
+  - libxlsxwriter (1.1.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.7.5)
   - MKBaseBleModule (1.1.4)
-  - MKBaseModuleLibrary (1.1.6):
-    - MKBaseModuleLibrary/Base (= 1.1.6)
-    - MKBaseModuleLibrary/Category (= 1.1.6)
-    - MKBaseModuleLibrary/Defines (= 1.1.6)
-    - MKBaseModuleLibrary/Tools (= 1.1.6)
-  - MKBaseModuleLibrary/Base (1.1.6):
-    - MKBaseModuleLibrary/Base/Cell (= 1.1.6)
-    - MKBaseModuleLibrary/Base/Controller (= 1.1.6)
-    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.6)
-    - MKBaseModuleLibrary/Base/View (= 1.1.6)
-  - MKBaseModuleLibrary/Base/Cell (1.1.6):
-    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.6)
-  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.6):
+  - MKBaseModuleLibrary (1.1.7):
+    - MKBaseModuleLibrary/Base (= 1.1.7)
+    - MKBaseModuleLibrary/Category (= 1.1.7)
+    - MKBaseModuleLibrary/Defines (= 1.1.7)
+    - MKBaseModuleLibrary/Tools (= 1.1.7)
+  - MKBaseModuleLibrary/Base (1.1.7):
+    - MKBaseModuleLibrary/Base/Cell (= 1.1.7)
+    - MKBaseModuleLibrary/Base/Controller (= 1.1.7)
+    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.7)
+    - MKBaseModuleLibrary/Base/View (= 1.1.7)
+  - MKBaseModuleLibrary/Base/Cell (1.1.7):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.7)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.7):
     - Masonry
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/Controller (1.1.6):
+  - MKBaseModuleLibrary/Base/Controller (1.1.7):
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - WRNavigationBar
-  - MKBaseModuleLibrary/Base/NavigationController (1.1.6)
-  - MKBaseModuleLibrary/Base/View (1.1.6):
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.6)
-    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.6)
-  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.6)
-  - MKBaseModuleLibrary/Base/View/TableView (1.1.6)
-  - MKBaseModuleLibrary/Category (1.1.6):
+  - MKBaseModuleLibrary/Base/NavigationController (1.1.7)
+  - MKBaseModuleLibrary/Base/View (1.1.7):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.7)
+    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.7)
+  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.7)
+  - MKBaseModuleLibrary/Base/View/TableView (1.1.7)
+  - MKBaseModuleLibrary/Category (1.1.7):
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast
-  - MKBaseModuleLibrary/Defines (1.1.6)
-  - MKBaseModuleLibrary/Tools (1.1.6):
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.6)
-    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.6)
-    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.6)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.6)
-  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.6)
-  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.6)
+  - MKBaseModuleLibrary/Defines (1.1.7)
+  - MKBaseModuleLibrary/Tools (1.1.7):
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKExcelManager (= 1.1.7)
+    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.7)
+  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.7)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.7)
+  - MKBaseModuleLibrary/Tools/MKExcelManager (1.1.7):
+    - libxlsxwriter
+    - MKBaseModuleLibrary/Defines
+    - SSZipArchive
+  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.7)
   - MKCustomUIModule (1.4.4):
     - CircleProgressBar
     - Masonry
@@ -429,68 +435,68 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKLoRaWAN-MP (1.0.0):
-    - MKLoRaWAN-MP/ConnectModule (= 1.0.0)
-    - MKLoRaWAN-MP/CTMediator (= 1.0.0)
-    - MKLoRaWAN-MP/Expand (= 1.0.0)
-    - MKLoRaWAN-MP/Functions (= 1.0.0)
-    - MKLoRaWAN-MP/SDK (= 1.0.0)
-    - MKLoRaWAN-MP/Target (= 1.0.0)
-  - MKLoRaWAN-MP/ConnectModule (1.0.0):
+  - MKLoRaWAN-MP (1.0.1):
+    - MKLoRaWAN-MP/ConnectModule (= 1.0.1)
+    - MKLoRaWAN-MP/CTMediator (= 1.0.1)
+    - MKLoRaWAN-MP/Expand (= 1.0.1)
+    - MKLoRaWAN-MP/Functions (= 1.0.1)
+    - MKLoRaWAN-MP/SDK (= 1.0.1)
+    - MKLoRaWAN-MP/Target (= 1.0.1)
+  - MKLoRaWAN-MP/ConnectModule (1.0.1):
     - MKBaseModuleLibrary
     - MKLoRaWAN-MP/SDK
-  - MKLoRaWAN-MP/CTMediator (1.0.0):
+  - MKLoRaWAN-MP/CTMediator (1.0.1):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKLoRaWAN-MP/Expand (1.0.0):
-    - MKLoRaWAN-MP/Expand/Cell (= 1.0.0)
-    - MKLoRaWAN-MP/Expand/Defines (= 1.0.0)
-  - MKLoRaWAN-MP/Expand/Cell (1.0.0):
-    - MKLoRaWAN-MP/Expand/Cell/TextButtonCell (= 1.0.0)
-  - MKLoRaWAN-MP/Expand/Cell/TextButtonCell (1.0.0):
+  - MKLoRaWAN-MP/Expand (1.0.1):
+    - MKLoRaWAN-MP/Expand/Cell (= 1.0.1)
+    - MKLoRaWAN-MP/Expand/Defines (= 1.0.1)
+  - MKLoRaWAN-MP/Expand/Cell (1.0.1):
+    - MKLoRaWAN-MP/Expand/Cell/TextButtonCell (= 1.0.1)
+  - MKLoRaWAN-MP/Expand/Cell/TextButtonCell (1.0.1):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-MP/Expand/Defines (1.0.0)
-  - MKLoRaWAN-MP/Functions (1.0.0):
+  - MKLoRaWAN-MP/Expand/Defines (1.0.1)
+  - MKLoRaWAN-MP/Functions (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/AboutPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/BleSettingPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/CountDownSettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/DeviceInfoPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/DeviceSettingPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/ElectricitySettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/EnergySettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/GeneralPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/IndicatorColorPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LEDSettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoadStatusPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaApplicationPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaSettingPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/OverProtectionPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/ProtectionSettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/ScanPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/SwitchSettingsPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/TabBarPage (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/UpdatePage (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/AboutPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/BleSettingPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/CountDownSettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/DeviceInfoPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/DeviceSettingPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/ElectricitySettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/EnergySettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/GeneralPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/IndicatorColorPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LEDSettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoadStatusPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaApplicationPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaSettingPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/OverProtectionPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/ProtectionSettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/ScanPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/SwitchSettingsPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/TabBarPage (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/UpdatePage (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/AboutPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/AboutPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/AboutPage/Controller (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/AboutPage/Controller (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/AboutPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/AboutPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -499,19 +505,19 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/BleSettingPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/BleSettingPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/BleSettingPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/BleSettingPage/Model (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/BleSettingPage/View (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/BleSettingPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/BleSettingPage/Model (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/BleSettingPage/View (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/BleSettingPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/BleSettingPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -522,7 +528,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/BleSettingPage/View
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/BleSettingPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/BleSettingPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -531,7 +537,7 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/BleSettingPage/View (1.0.0):
+  - MKLoRaWAN-MP/Functions/BleSettingPage/View (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -540,18 +546,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/CountDownSettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/CountDownSettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -561,7 +567,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/CountDownSettingsPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -570,18 +576,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceInfoPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceInfoPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/DeviceInfoPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/DeviceInfoPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/DeviceInfoPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/DeviceInfoPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceInfoPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceInfoPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -592,7 +598,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/UpdatePage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceInfoPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceInfoPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -601,18 +607,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceSettingPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceSettingPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/DeviceSettingPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/DeviceSettingPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/DeviceSettingPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/DeviceSettingPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceSettingPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceSettingPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -623,7 +629,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/DeviceSettingPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/DeviceSettingPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/DeviceSettingPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -632,17 +638,17 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ElectricitySettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/ElectricitySettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/ElectricitySettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/ElectricitySettingsPage/Controller (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ElectricitySettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/ElectricitySettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -651,18 +657,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/EnergySettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/EnergySettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/EnergySettingsPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/EnergySettingsPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/EnergySettingsPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/EnergySettingsPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/EnergySettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/EnergySettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -672,7 +678,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/EnergySettingsPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/EnergySettingsPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/EnergySettingsPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -681,17 +687,17 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/GeneralPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/GeneralPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/GeneralPage/Controller (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/GeneralPage/Controller (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/GeneralPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/GeneralPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -707,19 +713,19 @@ PODS:
     - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/IndicatorColorPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/IndicatorColorPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/IndicatorColorPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/IndicatorColorPage/Model (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/IndicatorColorPage/View (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/IndicatorColorPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/IndicatorColorPage/Model (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/IndicatorColorPage/View (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/IndicatorColorPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/IndicatorColorPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -730,7 +736,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/IndicatorColorPage/View
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/IndicatorColorPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/IndicatorColorPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -739,7 +745,7 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/IndicatorColorPage/View (1.0.0):
+  - MKLoRaWAN-MP/Functions/IndicatorColorPage/View (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -748,18 +754,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LEDSettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/LEDSettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/LEDSettingsPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LEDSettingsPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/LEDSettingsPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LEDSettingsPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LEDSettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/LEDSettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -770,7 +776,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LEDSettingsPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LEDSettingsPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/LEDSettingsPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -779,19 +785,19 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoadStatusPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoadStatusPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/LoadStatusPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoadStatusPage/Model (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoadStatusPage/View (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/LoadStatusPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoadStatusPage/Model (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoadStatusPage/View (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoadStatusPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoadStatusPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -802,7 +808,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LoadStatusPage/View
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoadStatusPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoadStatusPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -811,7 +817,7 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoadStatusPage/View (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoadStatusPage/View (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -820,18 +826,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaApplicationPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaApplicationPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -841,7 +847,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaApplicationPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -850,18 +856,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/LoRaPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/LoRaPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -873,7 +879,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LoRaSettingPage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -882,18 +888,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaSettingPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaSettingPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/LoRaSettingPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/LoRaSettingPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/LoRaSettingPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/LoRaSettingPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaSettingPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaSettingPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -903,7 +909,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LoRaSettingPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/LoRaSettingPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/LoRaSettingPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -912,18 +918,18 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/OverProtectionPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/OverProtectionPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/OverProtectionPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/OverProtectionPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/OverProtectionPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/OverProtectionPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/OverProtectionPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/OverProtectionPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -933,7 +939,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/OverProtectionPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/OverProtectionPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/OverProtectionPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -942,17 +948,17 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ProtectionSettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/ProtectionSettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/ProtectionSettingsPage/Controller (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/ProtectionSettingsPage/Controller (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ProtectionSettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/ProtectionSettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -962,19 +968,19 @@ PODS:
     - MKLoRaWAN-MP/Functions/OverProtectionPage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ScanPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/ScanPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/ScanPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/ScanPage/Model (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/ScanPage/View (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/ScanPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/ScanPage/Model (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/ScanPage/View (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ScanPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/ScanPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -986,7 +992,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/TabBarPage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ScanPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/ScanPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -995,7 +1001,7 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/ScanPage/View (1.0.0):
+  - MKLoRaWAN-MP/Functions/ScanPage/View (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1005,18 +1011,18 @@ PODS:
     - MKLoRaWAN-MP/Functions/ScanPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/SwitchSettingsPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/SwitchSettingsPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1026,7 +1032,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/SwitchSettingsPage/Model (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1035,17 +1041,17 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/TabBarPage (1.0.0):
+  - MKLoRaWAN-MP/Functions/TabBarPage (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/TabBarPage/Controller (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/TabBarPage/Controller (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/TabBarPage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/TabBarPage/Controller (1.0.1):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1058,7 +1064,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/LoRaPage/Controller
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/UpdatePage (1.0.0):
+  - MKLoRaWAN-MP/Functions/UpdatePage (1.0.1):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1066,11 +1072,11 @@ PODS:
     - MKLoRaWAN-MP/ConnectModule
     - MKLoRaWAN-MP/CTMediator
     - MKLoRaWAN-MP/Expand
-    - MKLoRaWAN-MP/Functions/UpdatePage/Controller (= 1.0.0)
-    - MKLoRaWAN-MP/Functions/UpdatePage/Model (= 1.0.0)
+    - MKLoRaWAN-MP/Functions/UpdatePage/Controller (= 1.0.1)
+    - MKLoRaWAN-MP/Functions/UpdatePage/Model (= 1.0.1)
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/UpdatePage/Controller (1.0.0):
+  - MKLoRaWAN-MP/Functions/UpdatePage/Controller (1.0.1):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1081,7 +1087,7 @@ PODS:
     - MKLoRaWAN-MP/Functions/UpdatePage/Model
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/Functions/UpdatePage/Model (1.0.0):
+  - MKLoRaWAN-MP/Functions/UpdatePage/Model (1.0.1):
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
@@ -1091,11 +1097,12 @@ PODS:
     - MKLoRaWAN-MP/Expand
     - MKLoRaWAN-MP/SDK
     - MLInputDodger
-  - MKLoRaWAN-MP/SDK (1.0.0):
+  - MKLoRaWAN-MP/SDK (1.0.1):
     - MKBaseBleModule
-  - MKLoRaWAN-MP/Target (1.0.0):
+  - MKLoRaWAN-MP/Target (1.0.1):
     - MKLoRaWAN-MP/Functions
   - MLInputDodger (1.5.2)
+  - SSZipArchive (2.4.3)
   - Toast (4.0.0)
   - WRNavigationBar (1.4.0)
   - ZIPFoundation (0.9.11)
@@ -1109,6 +1116,7 @@ SPEC REPOS:
     - CTMediator
     - HHTransition
     - iOSDFULibrary
+    - libxlsxwriter
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -1116,6 +1124,7 @@ SPEC REPOS:
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
+    - SSZipArchive
     - Toast
     - WRNavigationBar
     - ZIPFoundation
@@ -1129,18 +1138,20 @@ SPEC CHECKSUMS:
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   HHTransition: ca5035c126a6a2dc1eb9a90d084013784bf4bf0a
   iOSDFULibrary: 3b9de67ed4bfb901b5f09c2fea843f65e152612d
+  libxlsxwriter: 07cdc00cf0edb30ce9773efbbb49a03459a6e0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
-  MKBaseModuleLibrary: 6de43aeeb519d1c5f3aa94ebaffe8b3a57351312
+  MKBaseModuleLibrary: 9ab75dfc3c79d88aa3ad13068cc5d47cba77bdd2
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKLoRaWAN-MP: 46b525d806cf52ad011c4cf2b90996f72efaf5a5
+  MKLoRaWAN-MP: 9e4b4de0a73c01968a737d9fbc8e5f35d89e7466
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
 PODFILE CHECKSUM: 0869501feae65ab8290aaeb9393546aa3d8d99f3
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
