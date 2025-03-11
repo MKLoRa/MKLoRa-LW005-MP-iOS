@@ -57,6 +57,7 @@
 #import "MKMPTabBarController.h"
 #import "MKMPUpdateController.h"
 #import "MKMPDFUModule.h"
+#import "MKMPNetworkService.h"
 #import "MKMPUserLoginManager.h"
 #import "CBPeripheral+MKMPAdd.h"
 #import "MKMPCentralManager.h"
